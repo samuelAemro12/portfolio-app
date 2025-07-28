@@ -1,14 +1,16 @@
 import React from 'react';
-import './App.css'
+import './App.css';
+import Hero from './components/Hero';
+import Projects from './components/Projects';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-
-    </>
-  )
+    <div className="min-h-screen">
+      <Hero />
+      <Projects />
+    </div>
+  );
 }
 
-export default App
+export default App;
+

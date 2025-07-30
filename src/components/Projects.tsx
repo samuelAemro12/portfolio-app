@@ -4,28 +4,35 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Netflix Clone",
       description: "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
       techStack: ["React", "Node.js", "MongoDB", "Stripe"],
       liveDemo: "https://demo.example.com",
       github: "https://github.com/username/ecommerce"
     },
     {
-      title: "Task Management App",
+      title: "Amazon Clone",
       description: "Collaborative project management tool with real-time updates, team collaboration, and progress tracking.",
       techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
       liveDemo: "https://tasks.example.com",
       github: "https://github.com/username/task-manager"
     },
     {
-      title: "Weather Dashboard",
+      title: "AdeyBloom",
       description: "Real-time weather application with location-based forecasts, interactive maps, and weather alerts.",
       techStack: ["React", "OpenWeather API", "Chart.js", "Tailwind"],
       liveDemo: "https://weather.example.com",
       github: "https://github.com/username/weather-app"
     },
     {
-      title: "Social Media Analytics",
+      title: "Breast cancer Case Prodictor",
+      description: "Analytics dashboard for social media metrics with data visualization and automated reporting features.",
+      techStack: ["Vue.js", "Python", "FastAPI", "Redis"],
+      liveDemo: "https://analytics.example.com",
+      github: "https://github.com/username/social-analytics"
+    },
+    {
+      title: "",
       description: "Analytics dashboard for social media metrics with data visualization and automated reporting features.",
       techStack: ["Vue.js", "Python", "FastAPI", "Redis"],
       liveDemo: "https://analytics.example.com",

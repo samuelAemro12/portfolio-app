@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import TechnicalSkills from './components/TechnicalSkills';
@@ -15,19 +16,32 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <Hero />
-      <About />
-      <TechnicalSkills />
-      <Services />
-      <Projects />
-      <CaseStudies />
-      <OpenSource />
-      <Certifications />
-      <Resume />
-      <Testimonials />
-      <Contact />
-      <Footer />
+    <div className="min-h-screen transition-colors duration-300">
+      <Navbar />
+      <main className="pt-20">
+        <section id="hero">
+          <Hero />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="skills">
+          <TechnicalSkills />
+        </section>
+        <Services />
+        <section id="projects">
+          <Projects />
+        </section>
+        <CaseStudies />
+        <OpenSource />
+        <Certifications />
+        <Resume />
+        <Testimonials />
+        <section id="contact">
+          <Contact />
+        </section>
+        <Footer />
+      </main>
     </div>
   );
 }

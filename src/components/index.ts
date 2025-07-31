@@ -3,6 +3,8 @@ export { default as About } from './About';
 export { default as Services } from './Services';
 export { default as Projects } from './Projects';
 export { default as CaseStudies } from './CaseStudies';
+export { default as OpenSource } from './OpenSource';
 export { default as Certifications } from './Certifications';
 export { default as Testimonials } from './Testimonials';
+export { default as Contact } from './Contact';
 export { default as Footer } from './Footer';

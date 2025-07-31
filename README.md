@@ -103,13 +103,13 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/portfolio-website/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/samuelAemro12/portfolio-app/issues).
 
 ## 📞 Contact
 
-Samuel Aemro - [Your Email] - [Your LinkedIn]
+Samuel Aemro - [samuelaemrowork12@gmail] - [in/samuelaemro]
 
-Project Link: [https://github.com/yourusername/portfolio-website](https://github.com/yourusername/portfolio-website)
+Project Link: [https://github.com/samuelAemro12/portfolio-app](https://github.com/samuelAemro12/portfolio-appwebsite)
 
 ---
 

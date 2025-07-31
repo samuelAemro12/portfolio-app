@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import CaseStudies from './components/CaseStudies';
 import OpenSource from './components/OpenSource';
 import Certifications from './components/Certifications';
+import Resume from './components/Resume';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -23,6 +24,7 @@ function App() {
       <CaseStudies />
       <OpenSource />
       <Certifications />
+      <Resume />
       <Testimonials />
       <Contact />
       <Footer />

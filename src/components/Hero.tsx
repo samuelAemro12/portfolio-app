@@ -58,8 +58,9 @@ const Hero = () => {
             </Link>
             
             <a
-              href="/resume.pdf"
-              download="Samuel_Aemro_Resume.pdf"
+              href="https://drive.google.com/uc?export=download&id=1fY6uEfic8TqG6dESlCijscNuop7C1rqZ"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-[#21262D] dark:hover:bg-[#21262D] hover:bg-gray-100 text-[#E6EDF3] dark:text-[#E6EDF3] text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 border border-[#30363D] dark:border-[#30363D] border-gray-300 hover:border-[#3B82F6]/50 group"
             >
               <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

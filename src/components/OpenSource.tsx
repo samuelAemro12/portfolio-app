@@ -1,7 +1,12 @@
 import { motion } from 'framer-motion';
 import { CodeBracketIcon, StarIcon } from '@heroicons/react/24/outline';
+import { useTheme } from '../contexts/ThemeContext';
 
 const OpenSource = () => {
+  const { isDark } = useTheme();
+
+  // Remove all useState and useEffect for theme
+
   const openSourceContributions = [
     {
       project: "Weshet Filler",
@@ -67,7 +72,7 @@ const OpenSource = () => {
   };
 
   return (
-    <section id="opensource" className="min-h-screen bg-[#0D1117] py-20 px-6">
+    <section id="opensource" className={`min-h-screen ${isDark ? 'bg-[#0D1117]' : 'bg-white'} py-20 px-6`}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -76,10 +81,10 @@ const OpenSource = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#E6EDF3] mb-4">
+          <h2 className={`text-4xl md:text-5xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>
             Open Source <span className="text-[#3B82F6]">Contributions</span>
           </h2>
-          <p className="text-lg text-[#E6EDF3]/80 max-w-3xl mx-auto">
+          <p className={`text-lg ${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} max-w-3xl mx-auto`}>
             Contributing to the developer community through open source projects and caring about code quality
           </p>
         </motion.div>
@@ -93,7 +98,7 @@ const OpenSource = () => {
         >
           <div className="flex items-center gap-3 mb-8">
             <CodeBracketIcon className="w-8 h-8 text-[#3B82F6]" />
-            <h3 className="text-2xl font-semibold text-[#E6EDF3]">Open Source Contributions</h3>
+            <h3 className={`text-2xl font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'}`}>Open Source Contributions</h3>
           </div>
 
           <motion.div
@@ -107,7 +112,7 @@ const OpenSource = () => {
               <motion.div
                 key={index}
                 variants={cardVariants}
-                className="bg-[#161B22] rounded-xl p-6 border border-[#30363D] hover:border-[#3B82F6]/50 transition-all duration-300 group"
+                className={`${isDark ? 'bg-[#161B22] border-[#30363D] hover:border-[#3B82F6]/50' : 'bg-gray-50 border-gray-200 hover:border-[#3B82F6]/50'} rounded-xl p-6 border transition-all duration-300 group`}
               >
                 <div className="mb-4">
                   <div className="flex items-center gap-3 mb-2">
@@ -118,30 +123,36 @@ const OpenSource = () => {
                       className="text-lg font-semibold text-[#3B82F6] hover:text-[#2563EB] transition-colors flex items-center gap-2"
                     >
                       {contribution.type === 'own-project' ? '💡' : '📦'} {contribution.project}
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                      </svg>
                     </a>
                   </div>
                   {contribution.prNumber && (
-                    <span className="text-sm text-[#3B82F6] bg-[#3B82F6]/10 px-2 py-1 rounded-full border border-[#3B82F6]/20">
-                      {contribution.prNumber}
+                    <span className={`text-xs ${isDark ? 'text-[#E6EDF3]/60' : 'text-gray-600'} font-mono`}>
+                      PR {contribution.prNumber}
                     </span>
                   )}
                 </div>
-                
-                <p className="text-[#E6EDF3]/80 mb-4 leading-relaxed text-sm">
+
+                <p className={`${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} text-sm leading-relaxed mb-4`}>
                   {contribution.description}
                 </p>
 
                 <div className="space-y-3 mb-4">
                   <div>
-                    <span className="text-xs font-medium text-[#E6EDF3]">Role:</span>
-                    <span className="text-xs text-[#3B82F6] ml-2">{contribution.role}</span>
+                    <span className={`text-xs font-medium ${isDark ? 'text-[#E6EDF3]/70' : 'text-gray-600'} uppercase tracking-wide`}>
+                      Role
+                    </span>
+                    <p className={`text-sm ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} font-medium`}>
+                      {contribution.role}
+                    </p>
                   </div>
+                  
                   <div>
-                    <span className="text-xs font-medium text-[#E6EDF3]">Impact:</span>
-                    <span className="text-xs text-green-400 ml-2">{contribution.impact}</span>
+                    <span className={`text-xs font-medium ${isDark ? 'text-[#E6EDF3]/70' : 'text-gray-600'} uppercase tracking-wide`}>
+                      Impact
+                    </span>
+                    <p className={`text-sm ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'}`}>
+                      {contribution.impact}
+                    </p>
                   </div>
                 </div>
 
@@ -149,7 +160,7 @@ const OpenSource = () => {
                   {contribution.techStack.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-2 py-1 bg-[#3B82F6]/10 text-[#3B82F6] text-xs rounded-full border border-[#3B82F6]/20"
+                      className={`px-2 py-1 ${isDark ? 'bg-[#3B82F6]/10 text-[#3B82F6] border-[#3B82F6]/20' : 'bg-blue-50 text-blue-700 border-blue-200'} text-xs rounded-full border`}
                     >
                       {tech}
                     </span>
@@ -172,7 +183,7 @@ const OpenSource = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <p className="text-[#E6EDF3]/80 mb-6">
+          <p className={`${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} mb-6`}>
             Want to collaborate on open source projects?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -180,7 +191,7 @@ const OpenSource = () => {
               href="https://github.com/samuelAemro12"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#21262D] hover:bg-[#30363D] text-[#E6EDF3] px-8 py-4 rounded-lg font-semibold transition-all duration-300 border border-[#30363D] group"
+              className={`inline-flex items-center gap-2 ${isDark ? 'bg-[#21262D] hover:bg-[#30363D] text-[#E6EDF3] border-[#30363D]' : 'bg-gray-100 hover:bg-gray-200 text-gray-900 border-gray-300'} px-8 py-4 rounded-lg font-semibold transition-all duration-300 border group`}
             >
               <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>

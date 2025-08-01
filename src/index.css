@@ -20,7 +20,7 @@ body {
 /* Light theme */
 body:not(.dark) {
   background-color: #FFFFFF;
-  color: #1F2937;
+  color: #111827;
 }
 
 /* Smooth transitions for theme changes */

@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion';
+import { useTheme } from '../contexts/ThemeContext';
 
 const About = () => {
+  const { isDark } = useTheme();
+
+  // Keep only the component logic
   const highlights = [
     {
       number: "Top 5",
@@ -53,8 +57,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="min-h-screen bg-[#161B22] py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className={`min-h-screen ${isDark ? 'bg-[#161B22]' : 'bg-gray-50'} py-20 px-6`}>
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,138 +66,121 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#E6EDF3] mb-4">
+          <h2 className={`text-4xl md:text-5xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>
             About <span className="text-[#3B82F6]">Me</span>
           </h2>
-        </motion.div>
-
-        {/* Professional Title & Summary */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-xl md:text-2xl text-[#E6EDF3] leading-relaxed max-w-4xl mx-auto">
-            I'm a <span className="text-[#3B82F6] font-semibold">Full Stack Web Developer</span> with a frontend focus, 
-            strong backend experience, and a growing interest in <span className="text-[#3B82F6] font-semibold">Machine Learning</span> and API integrations.
+          <p className={`text-lg ${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} leading-relaxed mb-6`}>
+            I'm a passionate Full-Stack Developer and Data Science enthusiast with a strong foundation in modern web technologies. 
+            Currently pursuing my BSc in Information Systems at the University of Gondar, I've developed expertise in both 
+            frontend and backend development, with a particular interest in machine learning and data analytics.
+          </p>
+          
+          <p className={`text-lg ${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} leading-relaxed`}>
+            My journey in tech has been driven by curiosity and a desire to solve real-world problems through code. 
+            I enjoy working with cutting-edge technologies and am always eager to learn new skills that can help me 
+            build better, more efficient solutions.
           </p>
         </motion.div>
 
-        {/* What I Do */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-          <h3 className="text-2xl font-semibold text-[#E6EDF3] mb-8 text-center">
-            What I Do
-          </h3>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {whatIDo.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-[#0D1117] p-6 rounded-xl border border-[#30363D] hover:border-[#3B82F6]/50 transition-all duration-300 group"
-              >
-                <div className="text-3xl mb-4">{item.icon}</div>
-                <h4 className="text-lg font-semibold text-[#E6EDF3] mb-3 group-hover:text-[#3B82F6] transition-colors">
-                  {item.title}
-                </h4>
-                <p className="text-[#E6EDF3]/80 leading-relaxed">
-                  {item.description}
+        <div className="space-y-16">
+          {/* What I Do Section - Full Width */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className={`text-3xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-8 text-center`}>What I Do</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {whatIDo.map((item, index) => (
+                <div key={index} className={`flex flex-col items-center text-center gap-4 p-8 rounded-xl ${isDark ? 'bg-[#161B22] border-[#30363D] hover:border-[#3B82F6]/50' : 'bg-gray-50 border-gray-200 hover:border-[#3B82F6]/50'} border transition-all duration-300 hover:shadow-lg min-h-[200px]`}>
+                  <span className="text-4xl mb-3">{item.icon}</span>
+                  <div className="space-y-3">
+                    <h5 className={`font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} text-base leading-tight`}>{item.title}</h5>
+                    <p className={`text-sm ${isDark ? 'text-[#E6EDF3]/70' : 'text-gray-600'} leading-relaxed`}>{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Main Content Grid */}
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className={`${isDark ? 'bg-[#0D1117]' : 'bg-white'} rounded-2xl p-8 border ${isDark ? 'border-[#30363D]' : 'border-gray-200'} shadow-lg h-full`}
+            >
+              <h3 className={`text-2xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-6`}>My Journey</h3>
+              
+              <div className="space-y-6">
+                <p className={`${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} leading-relaxed text-base`}>
+                  I'm a <span className="text-[#3B82F6] font-semibold">Computer Science student</span> at University of Gondar, 
+                  passionate about building scalable web applications and exploring the intersection of technology and user experience.
                 </p>
-              </motion.div>
-            ))}
+                
+                <p className={`${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} leading-relaxed text-base`}>
+                  My expertise spans across <span className="text-[#3B82F6] font-semibold">React, Node.js, and modern web technologies</span>, 
+                  with hands-on experience in full-stack development, API integration, and machine learning applications.
+                </p>
+              </div>
+
+              <div className="mt-8">
+                <h4 className={`text-lg font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>Tech Stack</h4>
+                <div className="flex flex-wrap gap-2">
+                  {techStack.map((tech, index) => (
+                    <span
+                      key={index}
+                      className={`px-3 py-2 ${isDark ? 'bg-[#3B82F6]/10 text-[#3B82F6] border-[#3B82F6]/20' : 'bg-blue-50 text-blue-700 border-blue-200'} text-sm font-medium rounded-full border transition-all duration-200 hover:scale-105`}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pt-8">
+                <h4 className={`text-lg font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>What I'm Looking For</h4>
+                <p className={`${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} leading-relaxed text-base`}>
+                  Currently seeking opportunities in <span className="text-[#3B82F6] font-semibold">frontend engineering</span> or 
+                  <span className="text-[#3B82F6] font-semibold"> full-stack roles</span> with ML/API integration challenges.
+                </p>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="flex flex-col justify-center h-full"
+            >
+              <div className="grid grid-cols-2 gap-6">
+                {highlights.map((highlight, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className={`${isDark ? 'bg-[#0D1117] border-[#30363D] hover:border-[#3B82F6]/50' : 'bg-white border-gray-200 hover:border-[#3B82F6]/50'} p-6 rounded-xl border transition-all duration-300 text-center group shadow-lg hover:shadow-xl`}
+                  >
+                    <div className="text-3xl font-bold text-[#3B82F6] mb-3 group-hover:scale-110 transition-transform">
+                      {highlight.number}
+                    </div>
+                    <div className={`${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} font-semibold mb-2 text-sm`}>
+                      {highlight.label}
+                    </div>
+                    <div className={`${isDark ? 'text-[#E6EDF3]/60' : 'text-gray-600'} text-xs leading-relaxed`}>
+                      {highlight.description}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-20">
-          {/* Technical Stack */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <h3 className="text-2xl font-semibold text-[#E6EDF3] mb-6">
-              Technical Stack
-            </h3>
-            
-            <div className="flex flex-wrap gap-3">
-              {techStack.map((tech, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  viewport={{ once: true }}
-                  className="px-4 py-2 bg-[#0D1117] border border-[#30363D] rounded-lg text-[#E6EDF3] hover:border-[#3B82F6]/50 hover:text-[#3B82F6] transition-all duration-300 cursor-default"
-                >
-                  {tech}
-                </motion.span>
-              ))}
-            </div>
-
-            {/* Career Goals */}
-            <div className="pt-8">
-              <h4 className="text-lg font-semibold text-[#E6EDF3] mb-4">What I'm Looking For</h4>
-              <p className="text-[#E6EDF3]/80 leading-relaxed">
-                Currently seeking opportunities in <span className="text-[#3B82F6] font-medium">frontend engineering</span> or 
-                <span className="text-[#3B82F6] font-medium"> full-stack roles</span> with ML/API integration challenges.
-              </p>
-            </div>
-
-            {/* Personal Touch */}
-            <div className="pt-6 border-t border-[#30363D]">
-              <p className="text-[#E6EDF3]/70 italic">
-                When I'm not coding, I enjoy reading sci-fi, working out, and testing weird Python scripts.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Career Highlights */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-semibold text-[#E6EDF3] mb-8">
-              Career Highlights
-            </h3>
-            
-            <div className="grid grid-cols-2 gap-6">
-              {highlights.map((highlight, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-[#0D1117] p-6 rounded-xl border border-[#30363D] hover:border-[#3B82F6]/50 transition-all duration-300 text-center group"
-                >
-                  <div className="text-3xl font-bold text-[#3B82F6] mb-2 group-hover:scale-110 transition-transform">
-                    {highlight.number}
-                  </div>
-                  <div className="text-[#E6EDF3] font-semibold mb-1">
-                    {highlight.label}
-                  </div>
-                  <div className="text-[#E6EDF3]/60 text-sm">
-                    {highlight.description}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

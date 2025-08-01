@@ -1,14 +1,19 @@
 import { motion } from 'framer-motion';
 import { StarIcon } from '@heroicons/react/24/solid';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Testimonials = () => {
+  const { isDark } = useTheme();
+
+  // Remove all useState and useEffect for theme
+
   const testimonials = [
     {
       name: "Sarah Johnson",
       role: "Product Manager",
-      company: "TechCorp Inc.",
+      company: "TechCorp",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
-      content: "Samuel delivered exceptional work on our e-commerce platform. His attention to detail and technical expertise made the project a huge success.",
+      content: "Samuel delivered exceptional work on our e-commerce platform. His attention to detail and technical expertise made our project a huge success.",
       rating: 5
     },
     {
@@ -16,7 +21,15 @@ const Testimonials = () => {
       role: "CTO",
       company: "StartupXYZ",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-      content: "Working with Samuel was a game-changer for our team. He brought innovative solutions and delivered high-quality code on time.",
+      content: "Working with Samuel was a game-changer for our startup. He built our entire frontend from scratch and delivered beyond our expectations.",
+      rating: 5
+    },
+    {
+      name: "David Wilson",
+      role: "Founder",
+      company: "InnovateLab",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      content: "Samuel's full-stack development skills are outstanding. He seamlessly integrated our ML models with a beautiful, responsive frontend.",
       rating: 5
     },
     {
@@ -52,8 +65,8 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="min-h-screen bg-[#0D1117] py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className={`min-h-screen ${isDark ? 'bg-[#0D1117]' : 'bg-white'} py-20 px-6`}>
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,11 +74,11 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#E6EDF3] mb-4">
-            What Clients <span className="text-[#3B82F6]">Say</span>
+          <h2 className={`text-4xl md:text-5xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>
+            Client <span className="text-[#3B82F6]">Testimonials</span>
           </h2>
-          <p className="text-lg text-[#E6EDF3]/80 max-w-2xl mx-auto">
-            Don't just take my word for it - here's what my clients have to say about working with me
+          <p className={`text-lg ${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} max-w-2xl mx-auto`}>
+            What clients say about working with me and the results we've achieved together
           </p>
         </motion.div>
 
@@ -80,30 +93,29 @@ const Testimonials = () => {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="bg-[#161B22] rounded-xl p-6 border border-[#30363D] hover:border-[#3B82F6]/50 transition-all duration-300 group hover:shadow-xl hover:shadow-[#3B82F6]/10"
+              className={`${isDark ? 'bg-[#161B22] border-[#30363D] hover:border-[#3B82F6]/50 hover:shadow-[#3B82F6]/10' : 'bg-gray-50 border-gray-200 hover:border-[#3B82F6]/50 hover:shadow-blue-100'} rounded-xl p-6 border transition-all duration-300 group hover:shadow-xl`}
             >
-              {/* Rating Stars */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <StarIcon key={i} className="w-5 h-5 text-yellow-400" />
                 ))}
               </div>
 
-              {/* Testimonial Content */}
-              <p className="text-[#E6EDF3]/80 leading-relaxed mb-6 italic">
+              <p className={`${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} leading-relaxed mb-6 italic`}>
                 "{testimonial.content}"
               </p>
 
-              {/* Client Info */}
               <div className="flex items-center gap-4">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover border-2 border-[#3B82F6]/20"
+                  className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
-                  <h4 className="text-[#E6EDF3] font-semibold">{testimonial.name}</h4>
-                  <p className="text-[#E6EDF3]/60 text-sm">
+                  <h4 className={`font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'}`}>
+                    {testimonial.name}
+                  </h4>
+                  <p className={`text-sm ${isDark ? 'text-[#E6EDF3]/70' : 'text-gray-600'}`}>
                     {testimonial.role} at {testimonial.company}
                   </p>
                 </div>
@@ -112,7 +124,6 @@ const Testimonials = () => {
           ))}
         </motion.div>
 
-        {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -120,11 +131,11 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <p className="text-[#E6EDF3]/80 mb-6">
+          <p className={`${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} mb-6`}>
             Ready to work together? Let's create something amazing!
           </p>
           <a
-            href="mailto:samuel@example.com"
+            href="mailto:samuelaemrowork12@gmail.com"
             className="inline-flex items-center gap-2 bg-[#3B82F6] hover:bg-[#2563EB] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 group"
           >
             <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

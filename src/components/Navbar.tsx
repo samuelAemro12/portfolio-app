@@ -1,31 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { SunIcon, MoonIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-scroll';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Navbar = () => {
-  const [isDark, setIsDark] = useState(true);
+  const { isDark, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setIsDark(savedTheme === 'dark');
-    }
-  }, []);
-
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-      document.body.style.backgroundColor = '#0D1117';
-      document.body.style.color = '#E6EDF3';
-    } else {
-      document.documentElement.classList.remove('dark');
-      document.body.style.backgroundColor = '#FFFFFF';
-      document.body.style.color = '#1F2937';
-    }
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  }, [isDark]);
 
   const navItems = [
     { name: 'Home', to: 'hero' },
@@ -67,7 +48,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={800}
                 className={`cursor-pointer transition-colors duration-300 hover:text-[#3B82F6] ${
-                  isDark ? 'text-[#E6EDF3]/80' : 'text-gray-600'
+                  isDark ? 'text-[#E6EDF3]/80' : 'text-gray-800'
                 }`}
               >
                 {item.name}
@@ -81,7 +62,7 @@ const Navbar = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              onClick={() => setIsDark(!isDark)}
+              onClick={toggleTheme}
               className={`p-2 rounded-lg transition-all duration-300 ${
                 isDark 
                   ? 'bg-[#21262D] hover:bg-[#30363D] text-[#E6EDF3]' 
@@ -137,7 +118,7 @@ const Navbar = () => {
                   duration={800}
                   onClick={() => setIsMenuOpen(false)}
                   className={`block py-2 cursor-pointer transition-colors duration-300 hover:text-[#3B82F6] ${
-                    isDark ? 'text-[#E6EDF3]/80' : 'text-gray-600'
+                    isDark ? 'text-[#E6EDF3]/80' : 'text-gray-800'
                   }`}
                 >
                   {item.name}
@@ -152,3 +133,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+

@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="min-h-screen transition-colors duration-300">
       <Navbar />
-      <main className="pt-20">
+      <main className="">
         <section id="hero">
           <Hero />
         </section>

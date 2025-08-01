@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { useTheme } from '../contexts/ThemeContext';
 import profileImage from '../assets/photo_2025-08-01_01-15-06.jpg';
 
 const Hero = () => {
+  const { isDark } = useTheme();
+
   return (
-    <section className="min-h-screen bg-[#0D1117] dark:bg-[#0D1117] bg-white flex items-center justify-center px-6">
+    <section className={`min-h-screen ${isDark ? 'bg-[#0D1117]' : 'bg-white'} flex items-center justify-center px-6`}>
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -17,7 +20,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl font-bold text-[#E6EDF3] dark:text-[#E6EDF3] text-gray-900 mb-4"
+            className={`text-4xl md:text-6xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}
           >
             Hi, I'm <span className="text-[#3B82F6]">Samuel</span>
           </motion.h1>
@@ -34,11 +37,11 @@ const Hero = () => {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg text-[#E6EDF3]/80 dark:text-[#E6EDF3]/80 text-gray-600 mb-8 max-w-lg leading-relaxed"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className={`text-lg md:text-xl ${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} mb-8 leading-relaxed`}
           >
-            I specialize in building modern web applications with React, Node.js, and cloud technologies. 
-            Passionate about creating seamless user experiences and scalable backend solutions.
+            Full-Stack Developer & Data Science Enthusiast passionate about creating 
+            innovative web solutions and leveraging data to drive meaningful insights.
           </motion.p>
           
           <motion.div

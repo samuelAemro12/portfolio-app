@@ -5,8 +5,12 @@ import {
   CheckCircleIcon,
   ExclamationCircleIcon
 } from '@heroicons/react/24/outline';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Contact = () => {
+  const { isDark } = useTheme();
+  
+  // Remove theme useState and useEffect, keep only form state
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -77,7 +81,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen bg-[#161B22] py-20 px-6">
+    <section id="contact" className={`min-h-screen ${isDark ? 'bg-[#161B22]' : 'bg-gray-50'} py-20 px-6`}>
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -86,10 +90,10 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#E6EDF3] mb-4">
+          <h2 className={`text-4xl md:text-5xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>
             Get In <span className="text-[#3B82F6]">Touch</span>
           </h2>
-          <p className="text-lg text-[#E6EDF3]/80 max-w-2xl mx-auto">
+          <p className={`text-lg ${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} max-w-2xl mx-auto`}>
             Ready to start your next project? Let's discuss how I can help bring your ideas to life.
           </p>
         </motion.div>
@@ -100,13 +104,13 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-[#0D1117] rounded-2xl p-8 border border-[#30363D] max-w-2xl mx-auto"
+          className={`${isDark ? 'bg-[#0D1117] border-[#30363D]' : 'bg-white border-gray-200'} rounded-2xl p-8 border max-w-2xl mx-auto`}
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name and Email */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-[#E6EDF3] mb-2">
+                <label htmlFor="name" className={`block text-sm font-medium ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-2`}>
                   Full Name *
                 </label>
                 <input
@@ -115,8 +119,8 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 bg-[#161B22] border rounded-lg text-[#E6EDF3] placeholder-[#E6EDF3]/50 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] transition-colors ${
-                    errors.name ? 'border-red-500' : 'border-[#30363D] focus:border-[#3B82F6]'
+                  className={`w-full px-4 py-3 ${isDark ? 'bg-[#161B22] text-[#E6EDF3] placeholder-[#E6EDF3]/50' : 'bg-gray-50 text-gray-900 placeholder-gray-500'} border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3B82F6] transition-colors ${
+                    errors.name ? 'border-red-500' : isDark ? 'border-[#30363D] focus:border-[#3B82F6]' : 'border-gray-300 focus:border-[#3B82F6]'
                   }`}
                   placeholder="Your full name"
                 />
@@ -129,7 +133,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-[#E6EDF3] mb-2">
+                <label htmlFor="email" className={`block text-sm font-medium ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-2`}>
                   Email Address *
                 </label>
                 <input
@@ -138,8 +142,8 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 bg-[#161B22] border rounded-lg text-[#E6EDF3] placeholder-[#E6EDF3]/50 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] transition-colors ${
-                    errors.email ? 'border-red-500' : 'border-[#30363D] focus:border-[#3B82F6]'
+                  className={`w-full px-4 py-3 ${isDark ? 'bg-[#161B22] text-[#E6EDF3] placeholder-[#E6EDF3]/50' : 'bg-gray-50 text-gray-900 placeholder-gray-500'} border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3B82F6] transition-colors ${
+                    errors.email ? 'border-red-500' : isDark ? 'border-[#30363D] focus:border-[#3B82F6]' : 'border-gray-300 focus:border-[#3B82F6]'
                   }`}
                   placeholder="your.email@example.com"
                 />
@@ -154,7 +158,7 @@ const Contact = () => {
 
             {/* Message */}
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-[#E6EDF3] mb-2">
+              <label htmlFor="message" className={`block text-sm font-medium ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-2`}>
                 Message *
               </label>
               <textarea
@@ -163,8 +167,8 @@ const Contact = () => {
                 rows={6}
                 value={formData.message}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 bg-[#161B22] border rounded-lg text-[#E6EDF3] placeholder-[#E6EDF3]/50 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] transition-colors resize-none ${
-                  errors.message ? 'border-red-500' : 'border-[#30363D] focus:border-[#3B82F6]'
+                className={`w-full px-4 py-3 ${isDark ? 'bg-[#161B22] text-[#E6EDF3] placeholder-[#E6EDF3]/50' : 'bg-gray-50 text-gray-900 placeholder-gray-500'} border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3B82F6] transition-colors resize-none ${
+                  errors.message ? 'border-red-500' : isDark ? 'border-[#30363D] focus:border-[#3B82F6]' : 'border-gray-300 focus:border-[#3B82F6]'
                 }`}
                 placeholder="Tell me about your project..."
               />
@@ -230,7 +234,7 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <p className="text-[#E6EDF3]/60 mb-4">
+          <p className={`${isDark ? 'text-[#E6EDF3]/60' : 'text-gray-600'} mb-4`}>
             Or reach me directly at
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -240,7 +244,7 @@ const Contact = () => {
             >
               samuelaemrowork12@gmail.com
             </a>
-            <span className="hidden sm:block text-[#E6EDF3]/40">•</span>
+            <span className={`hidden sm:block ${isDark ? 'text-[#E6EDF3]/40' : 'text-gray-400'}`}>•</span>
             <a
               href="tel:+251-902329031"
               className="text-[#3B82F6] hover:text-[#2563EB] transition-colors font-medium"

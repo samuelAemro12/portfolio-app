@@ -14,7 +14,6 @@ const Testimonials = () => {
       company: "TechCorp",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
       content: "Samuel delivered exceptional work on our e-commerce platform. His attention to detail and technical expertise made our project a huge success.",
-      rating: 5
     },
     {
       name: "Michael Chen",
@@ -22,7 +21,6 @@ const Testimonials = () => {
       company: "StartupXYZ",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
       content: "Working with Samuel was a game-changer for our startup. He built our entire frontend from scratch and delivered beyond our expectations.",
-      rating: 5
     },
     {
       name: "David Wilson",
@@ -30,15 +28,6 @@ const Testimonials = () => {
       company: "InnovateLab",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
       content: "Samuel's full-stack development skills are outstanding. He seamlessly integrated our ML models with a beautiful, responsive frontend.",
-      rating: 5
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "Lead Designer",
-      company: "Creative Studio",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-      content: "Samuel's ability to translate design concepts into pixel-perfect, responsive web applications is truly impressive. Highly recommended!",
-      rating: 5
     },
   ];
 
@@ -122,27 +111,6 @@ const Testimonials = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <p className={`${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} mb-6`}>
-            Ready to work together? Let's create something amazing!
-          </p>
-          <a
-            href="mailto:samuelaemrowork12@gmail.com"
-            className="inline-flex items-center gap-2 bg-[#3B82F6] hover:bg-[#2563EB] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 group"
-          >
-            <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            Get In Touch
-          </a>
         </motion.div>
       </div>
     </section>

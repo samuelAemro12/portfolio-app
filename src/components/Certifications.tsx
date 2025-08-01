@@ -5,18 +5,11 @@ import { useTheme } from '../contexts/ThemeContext';
 const Certifications = () => {
   const { isDark } = useTheme();
 
-  // Remove all useState and useEffect for theme
-
   const certifications = [
     {
       title: "Data Science Nanodegree",
       provider: "Udacity",
       year: "2023"
-    },
-    {
-      title: "Programming Fundamentals",
-      provider: "Udacity", 
-      year: "2022"
     },
     {
       title: "ML & Employability Training",
@@ -28,11 +21,6 @@ const Certifications = () => {
       provider: "University of Gondar",
       year: "2025",
       highlight: "Ranked 5th University-wide"
-    },
-    {
-      title: "Full Stack Web Development",
-      provider: "freeCodeCamp",
-      year: "2022"
     }
   ];
 
@@ -40,7 +28,7 @@ const Certifications = () => {
     {
       degree: "BSc in Information Systems",
       institution: "University of Gondar",
-      year: "2020 – 2025",
+      year: "2021 – 2025",
       honor: "Graduated with Great Distinction (Top 2 in Department)"
     }
   ];
@@ -160,7 +148,7 @@ const Certifications = () => {
                 <motion.div
                   key={index}
                   variants={cardVariants}
-                  className={`${isDark ? 'bg-[#161B22] border-[#30363D] hover:border-[#3B82F6]/50 hover:shadow-[#3B82F6]/10' : 'bg-gray-50 border-gray-200 hover:border-[#3B82F6]/50 hover:shadow-blue-100'} rounded-xl p-6 border transition-all duration-300 group hover:shadow-xl`}
+                  className={`${isDark ? 'bg-[#161B22] border-[#30363D] hover:border-[#3B82F6]/50 hover:shadow-[#3B82F6]/10' : 'bg-gray-50 border-gray-200 hover:border-[#3B82F6]/50 hover:shadow-blue-100'} rounded-xl p-6 border transition-all duration-300 group hover:shadow-xl min-h-[280px] flex flex-col`}
                 >
                   <div className="flex items-center justify-between mb-4">
                     <span className={`text-[#3B82F6] text-sm font-semibold ${isDark ? 'bg-[#3B82F6]/10 border-[#3B82F6]/20' : 'bg-blue-50 border-blue-200'} px-3 py-1 rounded-full border`}>
@@ -174,21 +162,23 @@ const Certifications = () => {
                     )}
                   </div>
 
-                  <h4 className={`text-lg font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-2 group-hover:text-[#3B82F6] transition-colors`}>
-                    {cert.title}
-                  </h4>
-                  
-                  <p className={`${isDark ? 'text-[#E6EDF3]/70' : 'text-gray-600'} text-sm mb-3`}>
-                    {cert.provider}
-                  </p>
+                  <div className="flex-1 flex flex-col">
+                    <h4 className={`text-lg font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-3 group-hover:text-[#3B82F6] transition-colors line-clamp-2`}>
+                      {cert.title}
+                    </h4>
+                    
+                    <p className={`${isDark ? 'text-[#E6EDF3]/70' : 'text-gray-600'} text-sm mb-4 flex-1`}>
+                      {cert.provider}
+                    </p>
 
-                  {cert.highlight && (
-                    <div className={`${isDark ? 'bg-[#3B82F6]/10 border-[#3B82F6]/20' : 'bg-blue-50 border-blue-200'} p-3 rounded-lg border mt-3`}>
-                      <p className={`text-sm ${isDark ? 'text-[#3B82F6]' : 'text-blue-700'} font-medium`}>
-                        🏆 {cert.highlight}
-                      </p>
-                    </div>
-                  )}
+                    {cert.highlight && (
+                      <div className={`${isDark ? 'bg-[#3B82F6]/10 border-[#3B82F6]/20' : 'bg-blue-50 border-blue-200'} p-3 rounded-lg border mt-auto`}>
+                        <p className={`text-sm ${isDark ? 'text-[#3B82F6]' : 'text-blue-700'} font-medium`}>
+                          🏆 {cert.highlight}
+                        </p>
+                      </div>
+                    )}
+                  </div>
                 </motion.div>
               ))}
             </motion.div>

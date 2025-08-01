@@ -27,14 +27,6 @@ const Testimonials = () => {
       content: "Samuel's ability to translate design concepts into pixel-perfect, responsive web applications is truly impressive. Highly recommended!",
       rating: 5
     },
-    {
-      name: "David Thompson",
-      role: "Founder",
-      company: "InnovateLab",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-      content: "Samuel's full-stack expertise helped us launch our MVP ahead of schedule. His problem-solving skills are outstanding.",
-      rating: 5
-    }
   ];
 
   const containerVariants = {
@@ -82,7 +74,7 @@ const Testimonials = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {testimonials.map((testimonial, index) => (
             <motion.div

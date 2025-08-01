@@ -70,15 +70,18 @@ const About = () => {
             About <span className="text-[#3B82F6]">Me</span>
           </h2>
           <p className={`text-lg ${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} leading-relaxed mb-6`}>
-            I'm a passionate Full-Stack Developer and Data Science enthusiast with a strong foundation in modern web technologies. 
-            Currently pursuing my BSc in Information Systems at the University of Gondar, I've developed expertise in both 
-            frontend and backend development, with a particular interest in machine learning and data analytics.
+          I'm a frontend-focused Full-Stack Developer with a solid foundation in backend integration and
+          a growing passion for data science and machine learning. I recently earned my BSc in Information Systems
+          from the University of Gondar, where I led multiple projects and honed my skills in building fast,
+          responsive, and scalable web applications.
           </p>
           
           <p className={`text-lg ${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} leading-relaxed`}>
-            My journey in tech has been driven by curiosity and a desire to solve real-world problems through code. 
-            I enjoy working with cutting-edge technologies and am always eager to learn new skills that can help me 
-            build better, more efficient solutions.
+          I specialize in modern frontend stacks like React, Next.js, and Tailwind CSS as — 
+          with a strong eye for clean UI/UX — while also being comfortable working across 
+          the stack when needed, I have also a working experince with nodeJS, ExpressJs, MongoDb and Python.
+          My curiosity drives me to explore machine learning and external API integrations, 
+          and I'm always pushing to solve real-world problems through thoughtful, practical engineering.
           </p>
         </motion.div>
 
@@ -113,19 +116,6 @@ const About = () => {
               viewport={{ once: true }}
               className={`${isDark ? 'bg-[#0D1117]' : 'bg-white'} rounded-2xl p-8 border ${isDark ? 'border-[#30363D]' : 'border-gray-200'} shadow-lg h-full`}
             >
-              <h3 className={`text-2xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-6`}>My Journey</h3>
-              
-              <div className="space-y-6">
-                <p className={`${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} leading-relaxed text-base`}>
-                  I'm a <span className="text-[#3B82F6] font-semibold">Computer Science student</span> at University of Gondar, 
-                  passionate about building scalable web applications and exploring the intersection of technology and user experience.
-                </p>
-                
-                <p className={`${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} leading-relaxed text-base`}>
-                  My expertise spans across <span className="text-[#3B82F6] font-semibold">React, Node.js, and modern web technologies</span>, 
-                  with hands-on experience in full-stack development, API integration, and machine learning applications.
-                </p>
-              </div>
 
               <div className="mt-8">
                 <h4 className={`text-lg font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>Tech Stack</h4>
@@ -145,7 +135,7 @@ const About = () => {
                 <h4 className={`text-lg font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>What I'm Looking For</h4>
                 <p className={`${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} leading-relaxed text-base`}>
                   Currently seeking opportunities in <span className="text-[#3B82F6] font-semibold">frontend engineering</span> or 
-                  <span className="text-[#3B82F6] font-semibold"> full-stack roles</span> with ML/API integration challenges.
+                  <span className="text-[#3B82F6] font-semibold"> full-stack roles</span> with API integration challenges.
                 </p>
               </div>
             </motion.div>

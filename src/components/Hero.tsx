@@ -22,7 +22,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className={`text-4xl md:text-6xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}
           >
-            Hi, I'm <span className="text-[#3B82F6]">Samuel</span>
+            Selam, I'm <span className="text-[#3B82F6]">Samuel</span>
           </motion.h1>
           
           <motion.h2
@@ -31,7 +31,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-2xl md:text-3xl font-semibold text-[#E6EDF3] dark:text-[#E6EDF3] text-gray-800 mb-6"
           >
-            Full Stack Web Developer
+            Frontend Developer 
           </motion.h2>
           
           <motion.p
@@ -40,8 +40,9 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className={`text-lg md:text-xl ${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} mb-8 leading-relaxed`}
           >
-            Full-Stack Developer & Data Science Enthusiast passionate about creating 
-            innovative web solutions and leveraging data to drive meaningful insights.
+        Building fast, scalable, and beautiful frontends with a backend-aware mindset. 
+        Powered by React, TailwindCSS, and a deep curiosity for clean code, user experience,
+        and real-world impact.
           </motion.p>
           
           <motion.div

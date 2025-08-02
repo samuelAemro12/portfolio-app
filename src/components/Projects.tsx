@@ -9,32 +9,46 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Netflix Clone",
-      description: "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveDemo: "https://demo.example.com",
-      github: "https://github.com/username/ecommerce"
+      title: "AdeyBloom E-commerce Platform",
+      description: "Full-stack multilingual e-commerce platform with modern UI, Chapa payment integration, user authentication, and comprehensive product management. Features responsive design and real-time inventory tracking.",
+      technologies: ["React", "Node.js", "MongoDB", "Express.js", "Tailwind CSS", "Chapa API", "JWT", "Cloudinary"],
+      liveDemo: "https://adeybloom-frontend.netlify.app",
+      github: "https://github.com/samuelAemro12/AdeyBloom-ecommerce-clientSide"
     },
     {
       title: "Amazon Clone",
-      description: "Collaborative project management tool with real-time updates, team collaboration, and progress tracking.",
-      technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-      liveDemo: "https://tasks.example.com",
-      github: "https://github.com/username/task-manager"
+      description: "Fully functional Amazon clone with user authentication, shopping cart, payment processing via Stripe, and Firebase integration. Features complete e-commerce functionality with modern React architecture.",
+      technologies: ["React", "Firebase", "Stripe API", "Express.js", "Node.js", "User Authentication"],
+      liveDemo: "https://amazon-clone-samuel.netlify.app",
+      github: "https://github.com/samuelAemro12/amazon-clone"
     },
     {
-      title: "AdeyBloom",
-      description: "Real-time weather application with location-based forecasts, interactive maps, and weather alerts.",
-      technologies: ["React", "OpenWeather API", "Chart.js", "Tailwind"],
-      liveDemo: "https://weather.example.com",
-      github: "https://github.com/username/weather-app"
+      title: "Netflix Clone",
+      description: "Netflix-inspired streaming platform clone with Firebase authentication, movie trailers integration, and responsive design. Showcases advanced frontend development skills with API integration.",
+      technologies: ["React", "Firebase Auth", "YouTube API", "CSS3", "User Authentication"],
+      liveDemo: "https://netflix-clone-samuel.netlify.app",
+      github: "https://github.com/samuelAemro12/netflix-clone"
     },
     {
-      title: "Breast cancer Case Predictor",
-      description: "Analytics dashboard for social media metrics with data visualization and automated reporting features.",
-      technologies: ["Vue.js", "Python", "FastAPI", "Redis"],
-      liveDemo: "https://analytics.example.com",
-      github: "https://github.com/username/social-analytics"
+      title: "Breast Cancer Prediction System",
+      description: "Machine learning project for breast cancer recurrence prediction using Naive Bayes and SVM classifiers. Developed on Google Colab with comprehensive data analysis and model evaluation.",
+      technologies: ["Python", "Jupyter Notebook", "Scikit-learn", "Naive Bayes", "SVM", "Healthcare ML"],
+      liveDemo: "https://colab.research.google.com/drive/your-notebook-link",
+      github: "https://github.com/samuelAemro12/MachineLeraning_SchoolProject-"
+    },
+    {
+      title: "CinemaStash API",
+      description: "Secure and scalable backend API for movie management with TMDB integration, user authentication, reviews, wishlists, and personalized recommendations. Built with modern REST principles.",
+      technologies: ["Node.js", "Express.js", "MongoDB", "TMDB API", "JWT", "RESTful API"],
+      liveDemo: "https://cinemastash-api.render.com",
+      github: "https://github.com/samuelAemro12/CinemaStash"
+    },
+    {
+      title: "BloodLink Platform",
+      description: "Collaborative blood donation platform connecting donors with recipients. Features real-time matching, user profiles, and emergency request system to save lives through technology.",
+      technologies: ["React", "Node.js", "MongoDB", "Real-time Updates", "Healthcare Tech"],
+      liveDemo: "https://bloodlink-platform.netlify.app",
+      github: "https://github.com/samuelAemro12/bloodlink"
     }
   ];
 

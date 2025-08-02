@@ -9,42 +9,21 @@ const OpenSource = () => {
 
   const openSourceContributions = [
     {
-      project: "Weshet Filler",
-      description: "Chrome extension to autofill Ethiopian web forms. Open-sourced for the dev community with smart bilingual support.",
-      repository: "https://github.com/samuelAemro12/weshet-filler",
-      role: "Creator & Maintainer",
-      impact: "50+ stars, helping Ethiopian developers",
-      techStack: ["JavaScript", "Chrome APIs", "HTML/CSS"],
-      type: "own-project"
-    },
-    {
-      project: "React Router",
-      description: "Popular React routing library. Contributed Ethiopian locale support for form validation and improved error handling.",
-      repository: "https://github.com/remix-run/react-router",
-      prNumber: "#10234",
+      project: "School Management System",
+      description: "Comprehensive school management platform for student records, grades, and administrative tasks. Contributed features and bug fixes during collaborative development.",
+      repository: "https://github.com/samuelAemro12/school-management-system",
       role: "Contributor",
-      impact: "Used by 15M+ developers",
-      techStack: ["TypeScript", "React", "Jest"],
+      impact: "Enhanced user experience and functionality",
+      techStack: ["JavaScript", "Node.js", "Database Management"],
       type: "contribution"
     },
     {
-      project: "Next.js",
-      description: "The React framework for production. Optimized image loading performance and added WebP format support.",
-      repository: "https://github.com/vercel/next.js",
-      prNumber: "#45678",
-      role: "Contributor",
-      impact: "20% faster image loading",
-      techStack: ["JavaScript", "Node.js", "Webpack"],
-      type: "contribution"
-    },
-    {
-      project: "Material-UI",
-      description: "React UI framework. Created accessibility features for form components and improved screen reader support.",
-      repository: "https://github.com/mui/material-ui",
-      prNumber: "#28901",
-      role: "Contributor",
-      impact: "Better accessibility for 5M+ users",
-      techStack: ["React", "TypeScript", "ARIA"],
+      project: "BloodLink Platform",
+      description: "Life-saving blood donation platform connecting donors with recipients. Contributed during hackathon with real-time matching and emergency request features.",
+      repository: "https://github.com/samuelAemro12/bloodlink",
+      role: "Hackathon Contributor",
+      impact: "Helping save lives through technology",
+      techStack: ["JavaScript", "React", "Real-time Updates"],
       type: "contribution"
     }
   ];

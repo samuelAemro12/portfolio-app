@@ -8,13 +8,13 @@ const About = () => {
   const highlights = [
     {
       number: "Top 5",
-      label: "University Ranking",
+      label: "University Project Ranking",
       description: "Final Year Project recognition"
     },
     {
       number: "5+",
       label: "Team Members Led",
-      description: "85% implementation completion"
+      description: "With 90% the code implementation"
     },
     {
       number: "6+",
@@ -51,10 +51,14 @@ const About = () => {
     }
   ];
 
-  const techStack = [
-    "React", "Next.js", "Node.js", "MongoDB", "TypeScript", 
-    "Tailwind CSS", "Prisma", "Python (ML)", "Git"
-  ];
+  const techStack = {
+    "Frontend Development": ["ReactJS", "TailwindCSS", "HTML5", "CSS3", "Responsive Design", "React Router", "JavaScript (ES6+)", "UI/UX Design", "Next.js", "Firebase Auth"],
+    "Backend & APIs": ["Node.js", "Express.js", "MongoDB", "RESTful APIs", "FakeStore API", "JWT", "Stripe", "Chapa", "TMDB API"],
+    "Dev Tools & Platforms": ["Git", "GitHub", "Postman", "Thunder Client", "Netlify", "Render", "Cloudinary", "Vercel"],
+    "Languages": ["JavaScript", "TypeScript", "Python", "Java", "C++", "Go", "HTML", "CSS"],
+    "Machine Learning/Data Science": ["NumPy", "Pandas", "scikit-learn", "Seaborn", "Matplotlib", "Data Preprocessing", "Model Evaluation"],
+    "Productivity & AI Augmentation": ["ChatGPT", "GitHub Copilot", "Google Drive", "Canva"]
+  };
 
   return (
     <section className={`min-h-screen ${isDark ? 'bg-[#161B22]' : 'bg-gray-50'} py-20 px-6`}>
@@ -70,18 +74,20 @@ const About = () => {
             About <span className="text-[#3B82F6]">Me</span>
           </h2>
           <p className={`text-lg ${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} leading-relaxed mb-6`}>
-          I'm a frontend-focused Full-Stack Developer with a solid foundation in backend integration and
-          a growing passion for data science and machine learning. I recently earned my BSc in Information Systems
-          from the University of Gondar, where I led multiple projects and honed my skills in building fast,
-          responsive, and scalable web applications.
+           I’m a Frontend Developer driven by real-world impact — building fast, scalable, 
+           and beautiful web interfaces with a backend-aware mindset. I specialize in React 
+           and TailwindCSS, with a strong foundation in backend technologies and a growing interest 
+           in machine learning and data-driven solutions. I recently earned my BSc in Information 
+           Systems from the University of Gondar, where I led multiple high-impact projects that blended
+           performance, usability, and clean code.
           </p>
           
           <p className={`text-lg ${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} leading-relaxed`}>
-          I specialize in modern frontend stacks like React, Next.js, and Tailwind CSS as — 
-          with a strong eye for clean UI/UX — while also being comfortable working across 
-          the stack when needed, I have also a working experince with nodeJS, ExpressJs, MongoDb and Python.
-          My curiosity drives me to explore machine learning and external API integrations, 
-          and I'm always pushing to solve real-world problems through thoughtful, practical engineering.
+          I specialize in modern frontend stacks like React, Next.js, and Tailwind CSS — with a strong eye for
+          clean UI/UX and performance. While frontend is my focus, I'm equally comfortable diving into backend
+          work with Node.js, Express, and MongoDB. I also have hands-on experience with Python. My curiosity drives 
+          me to explore machine learning and external API integrations, always aiming to solve real-world problems through 
+          practical, well-engineered solutions.
           </p>
         </motion.div>
 
@@ -118,25 +124,26 @@ const About = () => {
             >
 
               <div className="mt-8">
-                <h4 className={`text-lg font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>Tech Stack</h4>
-                <div className="flex flex-wrap gap-2">
-                  {techStack.map((tech, index) => (
-                    <span
-                      key={index}
-                      className={`px-3 py-2 ${isDark ? 'bg-[#3B82F6]/10 text-[#3B82F6] border-[#3B82F6]/20' : 'bg-blue-50 text-blue-700 border-blue-200'} text-sm font-medium rounded-full border transition-all duration-200 hover:scale-105`}
-                    >
-                      {tech}
-                    </span>
+                <h4 className={`text-lg font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-6`}>Tech Stack & Tools</h4>
+                <div className="space-y-4">
+                  {Object.entries(techStack).map(([category, techs]) => (
+                    <div key={category}>
+                      <h5 className={`text-sm font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-800'} mb-2`}>
+                        {category}
+                      </h5>
+                      <div className="flex flex-wrap gap-2">
+                        {techs.map((tech, index) => (
+                          <span
+                            key={index}
+                            className={`px-3 py-1 ${isDark ? 'bg-[#3B82F6]/10 text-[#3B82F6] border-[#3B82F6]/20' : 'bg-blue-50 text-blue-700 border-blue-200'} text-xs font-medium rounded-full border transition-all duration-200 hover:scale-105`}
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   ))}
                 </div>
-              </div>
-
-              <div className="pt-8">
-                <h4 className={`text-lg font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>What I'm Looking For</h4>
-                <p className={`${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} leading-relaxed text-base`}>
-                  Currently seeking opportunities in <span className="text-[#3B82F6] font-semibold">frontend engineering</span> or 
-                  <span className="text-[#3B82F6] font-semibold"> full-stack roles</span> with API integration challenges.
-                </p>
               </div>
             </motion.div>
             
@@ -178,4 +185,3 @@ const About = () => {
 };
 
 export default About;
-

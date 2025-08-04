@@ -25,7 +25,7 @@ const Projects = () => {
       title: "Netflix Clone",
       description: "Netflix-inspired streaming platform clone with Firebase authentication, movie trailers integration, and responsive design. Showcases advanced frontend development skills with API integration.",
       technologies: ["React", "Firebase Auth", "YouTube trailer Integration", "TMDB API", "CSS3", "User Authentication"],
-      liveDemo: "https://netflix-clone-samuel.netlify.app",
+      liveDemo: "https://samuelaemro12.github.io/netflix-clone/",
       github: "https://github.com/samuelAemro12/netflix-clone"
     },
     {

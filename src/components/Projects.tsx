@@ -38,7 +38,7 @@ const Projects = () => {
       title: "CinemaStash API",
       description: "Secure and scalable backend API for movie management with TMDB integration, user authentication, reviews, wishlists, and personalized recommendations. Built with modern REST principles.",
       technologies: ["Node.js", "Express.js", "MongoDB", "TMDB API", "JWT", "RESTful API"],
-      liveDemo: "https://cinemastash-api.render.com",
+      liveDemo: "https://cinemastash.onrender.com/",
       github: "https://github.com/samuelAemro12/CinemaStash"
     },
     {

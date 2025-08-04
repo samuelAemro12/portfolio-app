@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
+import { label } from 'framer-motion/client';
 
 const About = () => {
   const { isDark } = useTheme();
 
-  // Keep only the component logic
   const highlights = [
     {
       number: "Top 5",
@@ -14,17 +14,22 @@ const About = () => {
     {
       number: "5+",
       label: "Team Members Led",
-      description: "With 90% the code implementation"
+      description: "With personal code completion of 90% "
     },
     {
-      number: "6+",
+      number: "5+",
       label: "Full-Stack Apps",
-      description: "Including Netflix & Amazon clones"
+      description: "Including an Ecommerce Solution site"
     },
     {
-      number: "3+",
+      number: "2+",
       label: "Years Experience",
       description: "Building modern web applications"
+    },
+    {
+      number: "Top 2",
+      label: "Graduated with Honours",
+      description:"in Information Systems from the University of Gondar"
     }
   ];
 
@@ -47,7 +52,7 @@ const About = () => {
     {
       icon: "🚀",
       title: "Deployment & UI",
-      description: "Deliver clean UI with Tailwind, deploy with Vercel/Render"
+      description: "Deliver clean UI with Tailwind, deploy with Vercel/Render/Netlify"
     }
   ];
 

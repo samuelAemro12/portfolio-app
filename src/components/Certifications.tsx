@@ -7,20 +7,25 @@ const Certifications = () => {
 
   const certifications = [
     {
-      title: "Data Science Nanodegree",
+      title: "Data Analysis Fundamentals",
       provider: "Udacity",
-      year: "2023"
+      year: "2025",
+      highlight: "Industry-Recognized Certification",
+      certificateLink: "https://drive.google.com/file/d/1a5oe1Ugt2WxfN8arXT_bJVfrMqjh8nx6/view?usp=sharing"
     },
     {
       title: "ML & Employability Training",
-      provider: "[Org Name]",
-      year: "2024"
+      provider: "University of Gondar & Norad",
+      year: "2025",
+      highlight: "Joint International Program",
+      certificateLink: "https://drive.google.com/file/d/1VLyrcztG-w6DjJMLMr8lZNaIEPXEsKwV/view?usp=sharing"
     },
     {
       title: "AdeyBloom: Final Year Project",
       provider: "University of Gondar",
       year: "2025",
-      highlight: "Ranked 5th University-wide"
+      highlight: "Ranked 5th University-wide",
+      certificateLink: "https://drive.google.com/file/d/1sMT6DbxBQtnlpufBt4ly5FmlKWC-oSju/view?usp=sharing"
     }
   ];
 
@@ -29,7 +34,9 @@ const Certifications = () => {
       degree: "BSc in Information Systems",
       institution: "University of Gondar",
       year: "2021 – 2025",
-      honor: "Graduated with Great Distinction (Top 2 in Department)"
+      honor: "Graduated with Great Distinction (Top 2 in Department)",
+      degreeLink: "https://drive.google.com/file/d/1I4sqTQwlsg6dcImbnjiWO8OEgeZPEhcV/view?usp=sharing",
+      certificateLink: "https://drive.google.com/file/d/1YFj_7Gi2qaY9K4FllIxkrDvjimYSzJcG/view?usp=sharing"
     }
   ];
 
@@ -56,7 +63,7 @@ const Certifications = () => {
   };
 
   return (
-    <section id="certifications" className={`min-h-screen ${isDark ? 'bg-[#0D1117]' : 'bg-white'} py-20 px-6`}>
+    <section id="certifications" className={`min-h-screen ${isDark ? 'bg-[#0D1117]' : 'bg-white'} py-12 px-6`}>
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -102,9 +109,34 @@ const Certifications = () => {
                       <p className={`${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} text-lg`}>{edu.year}</p>
                     </div>
                     <div className="mt-4 md:mt-0 md:text-right">
-                      <div className={`inline-flex items-center gap-2 ${isDark ? 'bg-[#3B82F6]/10 text-[#3B82F6] border-[#3B82F6]/20' : 'bg-blue-50 text-blue-700 border-blue-200'} px-4 py-2 rounded-full border`}>
+                      <div className={`inline-flex items-center gap-2 ${isDark ? 'bg-[#3B82F6]/10 text-[#3B82F6] border-[#3B82F6]/20' : 'bg-blue-50 text-blue-700 border-blue-200'} px-4 py-2 rounded-full border mb-4`}>
                         <TrophyIcon className="w-5 h-5" />
                         <span className="font-medium">{edu.honor}</span>
+                      </div>
+                      <div className="flex gap-2 flex-wrap justify-end">
+                        <a
+                          href={edu.degreeLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 bg-[#3B82F6] hover:bg-[#2563EB] text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 group"
+                        >
+                          <svg className="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                          </svg>
+                          Graduation Degree
+                        </a>
+                        <a
+                          href={edu.certificateLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`inline-flex items-center gap-2 ${isDark ? 'bg-[#21262D] hover:bg-[#30363D] text-[#E6EDF3] border-[#30363D]' : 'bg-gray-100 hover:bg-gray-200 text-gray-900 border-gray-300'} px-4 py-2 rounded-lg font-medium transition-all duration-300 border group`}
+                        >
+                          <svg className="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          Grad Certificate
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -172,12 +204,24 @@ const Certifications = () => {
                     </p>
 
                     {cert.highlight && (
-                      <div className={`${isDark ? 'bg-[#3B82F6]/10 border-[#3B82F6]/20' : 'bg-blue-50 border-blue-200'} p-3 rounded-lg border mt-auto`}>
+                      <div className={`${isDark ? 'bg-[#3B82F6]/10 border-[#3B82F6]/20' : 'bg-blue-50 border-blue-200'} p-3 rounded-lg border mt-auto mb-4`}>
                         <p className={`text-sm ${isDark ? 'text-[#3B82F6]' : 'text-blue-700'} font-medium`}>
                           🏆 {cert.highlight}
                         </p>
                       </div>
                     )}
+
+                    <a
+                      href={cert.certificateLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-[#3B82F6] hover:bg-[#2563EB] text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 group mt-auto"
+                    >
+                      <svg className="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      View Certificate
+                    </a>
                   </div>
                 </motion.div>
               ))}

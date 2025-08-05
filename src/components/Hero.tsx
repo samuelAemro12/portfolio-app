@@ -8,7 +8,7 @@ const Hero = () => {
   const { isDark } = useTheme();
 
   return (
-    <section className={`min-h-screen ${isDark ? 'bg-[#0D1117]' : 'bg-white'} flex items-center justify-center px-6`}>
+    <section className={`min-h-screen ${isDark ? 'bg-[#0D1117]' : 'bg-white'} flex items-center justify-center px-6 pt-24 sm:pt-20 md:pt-16 lg:pt-0`}>
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

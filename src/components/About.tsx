@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
-import { label } from 'framer-motion/client';
 
 const About = () => {
   const { isDark } = useTheme();

@@ -2,12 +2,24 @@ import { motion } from 'framer-motion';
 import { CodeBracketIcon, StarIcon } from '@heroicons/react/24/outline';
 import { useTheme } from '../contexts/ThemeContext';
 
+interface Contribution {
+  project: string;
+  description: string;
+  repository: string;
+  role: string;
+  impact: string;
+  techStack: string[];
+  type: string;
+  prLink?: string;
+  prNumber?: string;
+}
+
 const OpenSource = () => {
   const { isDark } = useTheme();
 
   // Remove all useState and useEffect for theme
 
-  const openSourceContributions = [
+  const openSourceContributions: Contribution[] = [
     {
       project: "CinemaStash API",
       description: "Secure and scalable backend API for movie management with TMDB integration, user authentication, reviews, wishlists, and personalized recommendations. Built with modern REST principles.",
@@ -115,8 +127,8 @@ const OpenSource = () => {
                       {contribution.type === 'own-project' ? '💡' : '📦'} {contribution.project}
                     </a>
                   </div>
-                  {contribution.prNumber && (
-                    <span className={`text-xs ${isDark ? 'text-[#E6EDF3]/60' : 'text-gray-600'} font-mono`}>
+                  {'prNumber' in contribution && contribution.prNumber && (
+                    <span className="text-blue-400 text-sm">
                       PR {contribution.prNumber}
                     </span>
                   )}

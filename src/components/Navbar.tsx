@@ -10,9 +10,9 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', to: 'hero' },
-    { name: 'About', to: 'about' },
-    { name: 'Skills', to: 'skills' },
     { name: 'Projects', to: 'projects' },
+    { name: 'Skills', to: 'skills' },
+    { name: 'About', to: 'about' },
     { name: 'Contact', to: 'contact' }
   ];
 

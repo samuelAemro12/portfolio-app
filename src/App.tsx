@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import WhatIDo from './components/whatIDo';
 import About from './components/About';
 import TechnicalSkills from './components/TechnicalSkills';
 import Projects from './components/Projects';
@@ -18,18 +19,22 @@ function App() {
         <section id="hero">
           <Hero />
         </section>
-        <section id="about">
-          <About />
+        <section id="whatIDo">
+          <WhatIDo />
+        </section> 
+        <section id="projects">
+          <Projects />
         </section>
         <section id="skills">
           <TechnicalSkills />
         </section>
-        <section id="projects">
-          <Projects />
-        </section>
+
         <OpenSource />
         <Certifications />
         <Testimonials />
+        <section id="about">
+        <About />
+        </section>
         <section id="contact">
           <Contact />
         </section>

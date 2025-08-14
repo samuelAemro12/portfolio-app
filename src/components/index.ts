@@ -1,4 +1,5 @@
 export { default as Hero } from './Hero';
+export { default as WhatIDo } from './whatIDo'
 export { default as About } from './About';
 export { default as TechnicalSkills } from './TechnicalSkills';
 export { default as Projects } from './Projects';

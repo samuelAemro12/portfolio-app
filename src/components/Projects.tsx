@@ -12,6 +12,7 @@ const Projects = () => {
       title: "AdeyBloom E-commerce Platform",
       description: "Full-stack multilingual e-commerce platform with modern UI, Chapa payment integration, user authentication, and comprehensive product management. Features responsive design and real-time inventory tracking.",
       technologies: ["React", "Node.js", "MongoDB", "Express.js", "Tailwind CSS", "Chapa API", "JWT", "Cloudinary", "Bcrypt"],
+      liveDemo: "https://adeybloom-ecommerce-client.netlify.app/",
       github: "https://github.com/samuelAemro12/AdeyBloom-ecommerce-clientSide"
     },
     {

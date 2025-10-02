@@ -36,12 +36,12 @@ const WhatIDo = ()  => {
     {
       icon: "🎨",
       title: "Frontend Development",
-      description: "Build responsive, accessible frontend apps with React + TypeScript"
+      description: "Build responsive, accessible frontend apps with React + TypeScript + Next.js and React-Native"
     },
     {
       icon: "⚙️",
       title: "Backend APIs",
-      description: "Design seamless backend APIs using Node.js, Express, and MongoDB"
+      description: "Design seamless backend APIs using Node.js, Express, FastAPI and MongoDB, MySQL"
     },
     {
       icon: "🤖",
@@ -51,14 +51,15 @@ const WhatIDo = ()  => {
     {
       icon: "🚀",
       title: "Deployment & UI",
-      description: "Deliver clean UI with Tailwind, deploy with Vercel/Render/Netlify"
+      description: "Deliver clean UI with Tailwind, deploy with Vercel/Render/Netlify/Heroku"
     }
   ];
 
   const techStack = {
-    "Frontend Development": ["ReactJS", "TailwindCSS", "HTML5", "CSS3", "Responsive Design", "React Router", "JavaScript (ES6+)", "UI/UX Design", "Next.js", "Firebase Auth"],
-    "Backend & APIs": ["Node.js", "Express.js", "MongoDB", "RESTful APIs", "FakeStore API", "JWT", "Stripe", "Chapa", "TMDB API"],
+    "Frontend Development": ["ReactJS","React-Native", "Next.js", "TailwindCSS", "NativewindCSS","HTML5", "CSS3", "Responsive Design", "React Router", "JavaScript (ES6+)", "UI/UX Design"],
+    "Backend & APIs": ["Node.js", "Express.js", "FastAPI", "SOAP APIs", "RESTful APIs", "FakeStore API", "JWT", "Stripe", "Chapa", "TMDB API", "Firebase Auth"],
     "Dev Tools & Platforms": ["Git", "GitHub", "Postman", "Thunder Client", "Netlify", "Render", "Cloudinary", "Vercel"],
+    "Databases":["MongoDB", "MySQL","MsSQL", "SQLite"],
     "Languages": ["JavaScript", "TypeScript", "Python", "Java", "C++", "Go", "HTML", "CSS"],
     "Machine Learning/Data Science": ["NumPy", "Pandas", "scikit-learn", "Seaborn", "Matplotlib", "Data Preprocessing", "Model Evaluation"],
     "Productivity & AI Augmentation": ["ChatGPT", "GitHub Copilot", "Google Drive", "Canva"]

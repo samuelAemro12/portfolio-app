@@ -36,7 +36,9 @@ const TechnicalSkills = () => {
         { name: 'Node.js', level: 88 },
         { name: 'Express.js', level: 85 },
         { name: 'MongoDB', level: 82 },
+        { name: 'Fast API', level: 78 },
         { name: 'RESTful APIs', level: 85 },
+        { name: 'SOAP APIs', level: 76},
         { name: 'JWT', level: 80 },
         { name: 'Stripe', level: 75 },
         { name: 'TMDB API', level: 78 }

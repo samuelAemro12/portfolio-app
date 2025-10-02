@@ -9,12 +9,12 @@ const Hero = () => {
 
   return (
     <section className={`min-h-screen ${isDark ? 'bg-[#0D1117]' : 'bg-white'} flex items-center justify-center px-6 pt-24 sm:pt-20 md:pt-16 lg:pt-0`}>
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-6 items-center justify-center min-h-[70vh]">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-left"
+          className="flex flex-col justify-center items-start text-left"
         >
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -31,18 +31,19 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-2xl md:text-3xl font-semibold text-[#E6EDF3] dark:text-[#E6EDF3] text-gray-800 mb-6"
           >
-            Frontend Developer 
+            Full Stack Web and Software Builder
           </motion.h2>
           
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className={`text-lg md:text-xl ${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} mb-8 leading-relaxed`}
+            className={`text-lg md:text-xl ${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} mb-4 leading-relaxed`}
           >
-        Building fast, scalable, and beautiful frontends with a backend-aware mindset. 
-        Powered by React, TailwindCSS, and a deep curiosity for clean code, user experience,
-        and real-world impact.
+          I design and develop fast, scalable, and user-friendly applications - 
+          blending frontend craftsmanship with backend efficiency. 
+          Driven by modern and legacy technology and a builder’s mindset,
+          I focus on clean code, smooth user experiences, and real-world problem solving.
           </motion.p>
           
           <motion.div
@@ -81,8 +82,68 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.4 }}
           className="flex items-center justify-center"
         >
-          <div className="relative">
-            {/* Profile Image */}
+          <div className="relative flex items-center justify-center" style={{ width: 480, height: 480 }}>
+            {/* Spinning Elements in a Wider Circle Around the Image */}
+            <motion.div
+              style={{
+                position: 'absolute',
+                left: '50%',
+                top: '50%',
+                width: 440,
+                height: 440,
+                marginLeft: -220,
+                marginTop: -220,
+                pointerEvents: 'none',
+              }}
+              animate={{ rotate: [0, 360] }}
+              transition={{ repeat: Infinity, duration: 12, ease: 'linear' }}
+            >
+              <motion.div
+                style={{
+                  position: 'absolute',
+                  left: '50%',
+                  top: 0,
+                  translateX: '-50%'
+                }}
+                className="w-16 h-16 bg-[#3B82F6]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#3B82F6]/30"
+              >
+                <span className="text-2xl">💻</span>
+              </motion.div>
+              <motion.div
+                style={{
+                  position: 'absolute',
+                  right: 0,
+                  top: '50%',
+                  translateY: '-50%'
+                }}
+                className="w-16 h-16 bg-[#3B82F6]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#3B82F6]/30"
+              >
+                <span className="text-2xl">🌐</span>
+              </motion.div>
+              <motion.div
+                style={{
+                  position: 'absolute',
+                  left: '50%',
+                  bottom: 0,
+                  translateX: '-50%'
+                }}
+                className="w-16 h-16 bg-[#3B82F6]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#3B82F6]/30"
+              >
+                <span className="text-2xl">⚡</span>
+              </motion.div>
+              <motion.div
+                style={{
+                  position: 'absolute',
+                  left: 0,
+                  top: '50%',
+                  translateY: '-50%'
+                }}
+                className="w-16 h-16 bg-[#3B82F6]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#3B82F6]/30"
+              >
+                <span className="text-2xl">🛠️</span>
+              </motion.div>
+            </motion.div>
+            {/* Profile Image (untouched) */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
@@ -91,59 +152,10 @@ const Hero = () => {
               <img
                 src={profileImage}
                 alt="Samuel Aemro"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rotate-0"
               />
-              
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#3B82F6]/20 to-transparent"></div>
-            </motion.div>
-            
-            {/* Floating Elements */}
-            <motion.div
-              animate={{ 
-                y: [0, -10, 0],
-                rotate: [0, 5, 0]
-              }}
-              transition={{ 
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="absolute -top-4 -right-4 w-16 h-16 bg-[#3B82F6]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#3B82F6]/30"
-            >
-              <span className="text-2xl">⚡</span>
-            </motion.div>
-            
-            <motion.div
-              animate={{ 
-                y: [0, 10, 0],
-                rotate: [0, -5, 0]
-              }}
-              transition={{ 
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1
-              }}
-              className="absolute -bottom-4 -left-4 w-12 h-12 bg-[#3B82F6]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#3B82F6]/30"
-            >
-              <span className="text-lg">💻</span>
-            </motion.div>
-            
-            <motion.div
-              animate={{ 
-                y: [0, -8, 0],
-                x: [0, 5, 0]
-              }}
-              transition={{ 
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 2
-              }}
-              className="absolute top-1/2 -left-8 w-10 h-10 bg-[#3B82F6]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#3B82F6]/30"
-            >
-              <span className="text-sm">🚀</span>
             </motion.div>
           </div>
         </motion.div>

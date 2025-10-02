@@ -10,8 +10,8 @@ const Projects = () => {
   const projects = [
     {
       title: "AdeyBloom E-commerce Platform",
-      description: "Full-stack multilingual e-commerce platform with modern UI, Chapa payment integration, user authentication, and comprehensive product management. Features responsive design and real-time inventory tracking.",
-      technologies: ["React", "Node.js", "MongoDB", "Express.js", "Tailwind CSS", "Chapa API", "JWT", "Cloudinary", "Bcrypt"],
+      description: "Multilingual full-stack e-commerce platform with Stripe/Chapa payments, real-time inventory, FastAPI microservices, and Telegram bot integration for customer engagement.",
+      technologies: ["React", "Node.js", "MongoDB", "Express.js", "FastAPI", "Tailwind CSS", "Chapa API", "JWT", "Cloudinary", "Bcrypt", "Telegram"],
       liveDemo: "https://adeybloom-ecommerce-client.netlify.app/",
       github: "https://github.com/samuelAemro12/AdeyBloom-ecommerce-clientSide"
     },
@@ -26,7 +26,7 @@ const Projects = () => {
       title: "Netflix Clone",
       description: "Netflix-inspired streaming platform clone with Firebase authentication, movie trailers integration, and responsive design. Showcases advanced frontend development skills with API integration.",
       technologies: ["React", "Firebase Auth", "YouTube trailer Integration", "TMDB API", "CSS3", "User Authentication"],
-      liveDemo: "https://samuelaemro12.github.io/netflix-clone/",
+      liveDemo: "https://samuelaemro-netflx-clone.netlify.app/",
       github: "https://github.com/samuelAemro12/netflix-clone"
     },
     {
@@ -45,7 +45,7 @@ const Projects = () => {
     {
       title: "BloodLink Platform",
       description: "Collaborative blood donation platform connecting donors with recipients. Features real-time matching, user profiles, and emergency request system to save lives through technology.",
-      technologies: ["React", "Node.js", "MongoDB", "Real-time Updates", "Healthcare Tech"],
+      technologies: ["Next.js", "Prisma", "SQLite", "Real-time Updates", "Healthcare Tech"],
       github: "https://github.com/samuelAemro12/bloodlink"
     }
   ];

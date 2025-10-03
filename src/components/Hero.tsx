@@ -82,17 +82,21 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.4 }}
           className="flex items-center justify-center"
         >
-          <div className="relative flex items-center justify-center" style={{ width: 480, height: 480 }}>
+          <div className="relative flex items-center justify-center w-full max-w-[480px] aspect-square mx-auto overflow-visible">
             {/* Spinning Elements in a Wider Circle Around the Image */}
             <motion.div
               style={{
                 position: 'absolute',
                 left: '50%',
                 top: '50%',
-                width: 440,
-                height: 440,
-                marginLeft: -220,
-                marginTop: -220,
+                width: '90%',
+                height: '90%',
+                maxWidth: 440,
+                maxHeight: 440,
+                minWidth: 220,
+                minHeight: 220,
+                marginLeft: 'calc(-45%)',
+                marginTop: 'calc(-45%)',
                 pointerEvents: 'none',
               }}
               animate={{ rotate: [0, 360] }}
@@ -147,7 +151,7 @@ const Hero = () => {
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
-              className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-[#3B82F6]/30 shadow-2xl"
+              className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[#3B82F6]/30 shadow-2xl"
             >
               <img
                 src={profileImage}

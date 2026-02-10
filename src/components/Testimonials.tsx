@@ -53,14 +53,14 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className={`min-h-screen ${isDark ? 'bg-[#0D1117]' : 'bg-white'} py-12 px-6`}>
+    <section className={`${isDark ? 'bg-[#0D1117]' : 'bg-white'} py-12 px-6`}>
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className={`text-4xl md:text-5xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>
              <span className="text-[#3B82F6]">Testimonials</span>
@@ -94,7 +94,7 @@ const Testimonials = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className={`${isDark ? 'bg-[#161B22] border-[#30363D]' : 'bg-gray-50 border-gray-200'} rounded-2xl p-8 md:p-12 border shadow-xl text-center max-w-3xl mx-auto`}
+              className={`${isDark ? 'bg-[#161B22] border-[#30363D]' : 'bg-gray-50 border-gray-200'} rounded-2xl p-8 border shadow-xl text-center max-w-3xl mx-auto`}
             >
               {/* Stars */}
               <div className="flex justify-center gap-1 mb-6">

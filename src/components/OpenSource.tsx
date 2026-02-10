@@ -74,14 +74,14 @@ const OpenSource = () => {
   };
 
   return (
-    <section id="opensource" className={`min-h-screen ${isDark ? 'bg-[#0D1117]' : 'bg-white'} py-20 px-6`}>
+    <section id="opensource" className={`${isDark ? 'bg-[#0D1117]' : 'bg-white'} py-12 px-6`}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className={`text-4xl md:text-5xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>
             Open Source <span className="text-[#3B82F6]">Contributions</span>
@@ -98,7 +98,7 @@ const OpenSource = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="flex items-center gap-3 mb-8">
+          <div className="flex items-center gap-3 mb-6">
             <CodeBracketIcon className="w-8 h-8 text-[#3B82F6]" />
             <h3 className={`text-2xl font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'}`}>Open Source Contributions</h3>
           </div>
@@ -108,7 +108,7 @@ const OpenSource = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {openSourceContributions.map((contribution, index) => (
               <motion.div
@@ -211,7 +211,7 @@ const OpenSource = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-8"
         >
           <p className={`${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} mb-6`}>
             Want to collaborate on open source projects?

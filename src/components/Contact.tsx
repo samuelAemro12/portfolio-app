@@ -94,14 +94,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className={`min-h-screen ${isDark ? 'bg-[#161B22]' : 'bg-gray-50'} py-20 px-6`}>
+    <section id="contact" className={`${isDark ? 'bg-[#161B22]' : 'bg-gray-50'} py-12 px-6`}>
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className={`text-4xl md:text-5xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>
             Get In <span className="text-[#3B82F6]">Touch</span>
@@ -117,7 +117,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className={`${isDark ? 'bg-[#0D1117] border-[#30363D]' : 'bg-white border-gray-200'} rounded-2xl p-8 border max-w-2xl mx-auto`}
+          className={`${isDark ? 'bg-[#0D1117] border-[#30363D]' : 'bg-white border-gray-200'} rounded-2xl p-6 border max-w-2xl mx-auto`}
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name and Email */}
@@ -245,7 +245,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-8"
         >
           <p className={`${isDark ? 'text-[#E6EDF3]/60' : 'text-gray-600'} mb-4`}>
             Or reach me directly at

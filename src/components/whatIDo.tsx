@@ -66,9 +66,9 @@ const WhatIDo = ()  => {
   };
 
   return (
-    <section className={`min-h-screen ${isDark ? 'bg-[#161B22]' : 'bg-gray-50'} py-20 px-6`}>
+    <section className={`min-h-screen ${isDark ? 'bg-[#161B22]' : 'bg-gray-50'} py-12 px-6`}>
       <div className="max-w-7xl mx-auto">
-        <div className="space-y-16">
+        <div className="space-y-12">
           {/* What I Do Section - Full Width */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -76,10 +76,10 @@ const WhatIDo = ()  => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className={`text-3xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-8 text-center`}>What I Do</h3>
+            <h3 className={`text-3xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-6 text-center`}>What I Do</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {whatIdo.map((item, index) => (
-                <div key={index} className={`flex flex-col items-center text-center gap-4 p-8 rounded-xl ${isDark ? 'bg-[#161B22] border-[#30363D] hover:border-[#3B82F6]/50' : 'bg-gray-50 border-gray-200 hover:border-[#3B82F6]/50'} border transition-all duration-300 hover:shadow-lg min-h-[200px]`}>
+                <div key={index} className={`flex flex-col items-center text-center gap-4 p-6 rounded-xl ${isDark ? 'bg-[#161B22] border-[#30363D] hover:border-[#3B82F6]/50' : 'bg-gray-50 border-gray-200 hover:border-[#3B82F6]/50'} border transition-all duration-300 hover:shadow-lg`}>
                   <span className="text-4xl mb-3">{item.icon}</span>
                   <div className="space-y-3">
                     <h5 className={`font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} text-base leading-tight`}>{item.title}</h5>
@@ -91,17 +91,17 @@ const WhatIDo = ()  => {
           </motion.div>
 
           {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className={`${isDark ? 'bg-[#0D1117]' : 'bg-white'} rounded-2xl p-8 border ${isDark ? 'border-[#30363D]' : 'border-gray-200'} shadow-lg h-full`}
+              className={`${isDark ? 'bg-[#0D1117]' : 'bg-white'} rounded-2xl p-6 border ${isDark ? 'border-[#30363D]' : 'border-gray-200'} shadow-lg h-full`}
             >
 
-              <div className="mt-8">
-                <h4 className={`text-lg font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-6`}>Tech Stack & Tools</h4>
+              <div className="mt-6">
+                <h4 className={`text-lg font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>Tech Stack & Tools</h4>
                 <div className="space-y-4">
                   {Object.entries(techStack).map(([category, techs]) => (
                     <div key={category}>

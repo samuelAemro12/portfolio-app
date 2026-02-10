@@ -5,7 +5,7 @@ const About = () => {
   const { isDark } = useTheme();
 
   return (
-    <section className={`min-h-screen ${isDark ? 'bg-[#161B22]' : 'bg-gray-50'} pt-20 pb-10 px-6`}>
+    <section className={`${isDark ? 'bg-[#161B22]' : 'bg-gray-50'} py-12 px-6`}>
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -27,12 +27,12 @@ const Navbar = () => {
         isDark ? 'border-[#30363D]' : 'border-gray-200'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className={`text-xl font-bold ${
+            className={`text-lg sm:text-xl font-bold ${
               isDark ? 'text-[#E6EDF3]' : 'text-gray-900'
             }`}
           >

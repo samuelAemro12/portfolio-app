@@ -1,87 +1,60 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { 
+import {
   PaperAirplaneIcon,
   CheckCircleIcon,
-  ExclamationCircleIcon
+  ExclamationCircleIcon,
 } from '@heroicons/react/24/outline';
 import { useTheme } from '../contexts/ThemeContext';
+import SectionBadge from './SectionBadge';
 
 const Contact = () => {
   const { isDark } = useTheme();
-  
-  // Remove theme useState and useEffect, keep only form state
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  
+
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    }
-
+    if (!formData.name.trim()) newErrors.name = 'Name is required';
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
     }
-
     if (!formData.message.trim()) {
       newErrors.message = 'Message is required';
     } else if (formData.message.trim().length < 10) {
       newErrors.message = 'Message must be at least 10 characters long';
     }
-
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    
-    if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
-    }
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: '' }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!validateForm()) {
-      return;
-    }
-
+    if (!validateForm()) return;
     setIsSubmitting(true);
     setSubmitStatus('idle');
-
     try {
       const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
       const response = await fetch(`${apiUrl}/api/mail`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-
       const result = await response.json();
-
       if (result.success) {
         setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          message: ''
-        });
+        setFormData({ name: '', email: '', message: '' });
       } else {
         setSubmitStatus('error');
       }
@@ -103,6 +76,7 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
+          <SectionBadge label="Let's Talk" />
           <h2 className={`text-4xl md:text-5xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>
             Get In <span className="text-[#3B82F6]">Touch</span>
           </h2>
@@ -120,7 +94,6 @@ const Contact = () => {
           className={`${isDark ? 'bg-[#0D1117] border-[#30363D]' : 'bg-white border-gray-200'} rounded-2xl p-6 border max-w-2xl mx-auto`}
         >
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Name and Email */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className={`block text-sm font-medium ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-2`}>
@@ -169,7 +142,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Message */}
             <div>
               <label htmlFor="message" className={`block text-sm font-medium ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-2`}>
                 Message *
@@ -193,7 +165,6 @@ const Contact = () => {
               )}
             </div>
 
-            {/* Submit Status */}
             {submitStatus === 'success' && (
               <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
                 <div className="flex items-center gap-2 text-green-400">
@@ -218,7 +189,6 @@ const Contact = () => {
               </div>
             )}
 
-            {/* Submit Button */}
             <button
               type="submit"
               disabled={isSubmitting}
@@ -226,7 +196,7 @@ const Contact = () => {
             >
               {isSubmitting ? (
                 <>
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                   Sending...
                 </>
               ) : (
@@ -239,7 +209,6 @@ const Contact = () => {
           </form>
         </motion.div>
 
-        {/* Simple Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -251,17 +220,11 @@ const Contact = () => {
             Or reach me directly at
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="mailto:samuelaemrowork12@gmail.com"
-              className="text-[#3B82F6] hover:text-[#2563EB] transition-colors font-medium"
-            >
+            <a href="mailto:samuelaemrowork12@gmail.com" className="text-[#3B82F6] hover:text-[#2563EB] transition-colors font-medium">
               samuelaemrowork12@gmail.com
             </a>
             <span className={`hidden sm:block ${isDark ? 'text-[#E6EDF3]/40' : 'text-gray-400'}`}>•</span>
-            <a
-              href="tel:+251-902329031"
-              className="text-[#3B82F6] hover:text-[#2563EB] transition-colors font-medium"
-            >
+            <a href="tel:+251-902329031" className="text-[#3B82F6] hover:text-[#2563EB] transition-colors font-medium">
               +251-902329031
             </a>
           </div>

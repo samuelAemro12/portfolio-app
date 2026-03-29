@@ -1,14 +1,13 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
+import SectionBadge from './SectionBadge';
 
 const TechnicalSkills = () => {
   const { isDark } = useTheme();
 
-  // Remove all useState and useEffect for theme
-
   const skillCategories = [
     {
-      category: "Frontend Development",
+      category: 'Frontend Development',
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -22,11 +21,11 @@ const TechnicalSkills = () => {
         { name: 'HTML5', level: 95 },
         { name: 'CSS3', level: 90 },
         { name: 'React Router', level: 88 },
-        { name: 'UI/UX Design', level: 85 }
-      ]
+        { name: 'UI/UX Design', level: 85 },
+      ],
     },
     {
-      category: "Backend & APIs",
+      category: 'Backend & APIs',
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
@@ -38,14 +37,14 @@ const TechnicalSkills = () => {
         { name: 'MongoDB', level: 82 },
         { name: 'Fast API', level: 78 },
         { name: 'RESTful APIs', level: 85 },
-        { name: 'SOAP APIs', level: 76},
+        { name: 'SOAP APIs', level: 76 },
         { name: 'JWT', level: 80 },
         { name: 'Stripe', level: 75 },
-        { name: 'TMDB API', level: 78 }
-      ]
+        { name: 'TMDB API', level: 78 },
+      ],
     },
     {
-      category: "Dev Tools & Platforms",
+      category: 'Dev Tools & Platforms',
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -59,11 +58,11 @@ const TechnicalSkills = () => {
         { name: 'Vercel', level: 85 },
         { name: 'Netlify', level: 82 },
         { name: 'Render', level: 80 },
-        { name: 'Cloudinary', level: 75 }
-      ]
+        { name: 'Cloudinary', level: 75 },
+      ],
     },
     {
-      category: "Languages & ML",
+      category: 'Languages & ML',
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -77,31 +76,19 @@ const TechnicalSkills = () => {
         { name: 'Go', level: 65 },
         { name: 'NumPy', level: 75 },
         { name: 'Pandas', level: 78 },
-        { name: 'scikit-learn', level: 72 }
-      ]
-    }
+        { name: 'scikit-learn', level: 72 },
+      ],
+    },
   ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   };
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
   };
 
   return (
@@ -114,6 +101,7 @@ const TechnicalSkills = () => {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
+          <SectionBadge label="Skills & Expertise" />
           <h2 className={`text-4xl md:text-5xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>
             Technical <span className="text-[#3B82F6]">Skills</span>
           </h2>
@@ -151,7 +139,7 @@ const TechnicalSkills = () => {
                       <span className={`text-sm font-medium ${isDark ? 'text-[#E6EDF3]' : 'text-gray-800'}`}>
                         {skill.name}
                       </span>
-                      <span className={`text-xs ${isDark ? 'text-[#E6EDF3]/60' : 'text-gray-600'}`}>
+                      <span className={`text-xs ${isDark ? 'text-[#E6EDF3]/60' : 'text-gray-500'}`}>
                         {skill.level}%
                       </span>
                     </div>
@@ -159,9 +147,13 @@ const TechnicalSkills = () => {
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: skillIndex * 0.1 }}
+                        transition={{ duration: 1, delay: skillIndex * 0.08, ease: 'easeOut' }}
                         viewport={{ once: true }}
-                        className="bg-[#3B82F6] h-2 rounded-full"
+                        className="h-2 rounded-full"
+                        style={{
+                          background: 'linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%)',
+                          boxShadow: '0 0 8px rgba(59, 130, 246, 0.4)',
+                        }}
                       />
                     </div>
                   </div>

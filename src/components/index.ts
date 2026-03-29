@@ -1,5 +1,5 @@
 export { default as Hero } from './Hero';
-export { default as WhatIDo } from './whatIDo'
+export { default as WhatIDo } from './whatIDo';
 export { default as About } from './About';
 export { default as TechnicalSkills } from './TechnicalSkills';
 export { default as Projects } from './Projects';
@@ -8,3 +8,5 @@ export { default as Certifications } from './Certifications';
 export { default as Testimonials } from './Testimonials';
 export { default as Contact } from './Contact';
 export { default as Footer } from './Footer';
+export { default as SectionBadge } from './SectionBadge';
+export { default as ScrollToTop } from './ScrollToTop';

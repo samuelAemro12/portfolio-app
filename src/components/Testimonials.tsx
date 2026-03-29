@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { StarIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import { useTheme } from '../contexts/ThemeContext';
 import { useState, useEffect } from 'react';
+import SectionBadge from './SectionBadge';
 
 const Testimonials = () => {
   const { isDark } = useTheme();
@@ -9,33 +10,33 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Dr. Worku Abebe",
-      role: "Dean, College of Informatics",
-      company: "University of Gondar",
-      content: "He demonstrates strong software development skills, especially in web design with modern frameworks. His portfolio reflects solid technical knowledge and creative thinking.",
-      rating: 5
+      name: 'Dr. Worku Abebe',
+      role: 'Dean, College of Informatics',
+      company: 'University of Gondar',
+      content: 'He demonstrates strong software development skills, especially in web design with modern frameworks. His portfolio reflects solid technical knowledge and creative thinking.',
+      rating: 5,
     },
     {
-      name: "Eshete Gizachew Addisu",
-      role: "Department Head",
-      company: "University of Gondar",
-      content: "In my classes, he showed exceptional programming aptitude, attention to detail, and the ability to understand and implement core software engineering concepts.",
-      rating: 5
+      name: 'Eshete Gizachew Addisu',
+      role: 'Department Head',
+      company: 'University of Gondar',
+      content: 'In my classes, he showed exceptional programming aptitude, attention to detail, and the ability to understand and implement core software engineering concepts.',
+      rating: 5,
     },
     {
-      name: "Gashaw D. Wubneh",
-      role: "Academic Advisor & Instructor",
-      company: "University of Gondar",
-      content: "His ability to handle pressure situations and come out on top is extremely commendable.",
-      rating: 5
+      name: 'Gashaw D. Wubneh',
+      role: 'Academic Advisor & Instructor',
+      company: 'University of Gondar',
+      content: 'His ability to handle pressure situations and come out on top is extremely commendable.',
+      rating: 5,
     },
     {
-      name: "Alexander Takele",
-      role: "ML Instructor",
-      company: "University of Gondar",
-      content: "His full-stack expertise with the MERN stack enables him to build and deploy complete data-driven applications.",
-      rating: 5
-    }
+      name: 'Alexander Takele',
+      role: 'ML Instructor',
+      company: 'University of Gondar',
+      content: 'His full-stack expertise with the MERN stack enables him to build and deploy complete data-driven applications.',
+      rating: 5,
+    },
   ];
 
   const nextTestimonial = () => {
@@ -46,7 +47,6 @@ const Testimonials = () => {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  // Auto-slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(nextTestimonial, 5000);
     return () => clearInterval(interval);
@@ -62,8 +62,9 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
+          <SectionBadge label="References" />
           <h2 className={`text-4xl md:text-5xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>
-             <span className="text-[#3B82F6]">Testimonials</span>
+            <span className="text-[#3B82F6]">Testimonials</span>
           </h2>
           <p className={`text-lg ${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} max-w-2xl mx-auto`}>
             What clients say about working with me and the results we've achieved together
@@ -93,11 +94,20 @@ const Testimonials = () => {
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
               className={`${isDark ? 'bg-[#161B22] border-[#30363D]' : 'bg-gray-50 border-gray-200'} rounded-2xl p-8 border shadow-xl text-center max-w-3xl mx-auto`}
             >
+              {/* Decorative large quote mark */}
+              <div
+                className="text-7xl font-serif leading-none select-none mb-2"
+                style={{ color: isDark ? 'rgba(59,130,246,0.18)' : 'rgba(59,130,246,0.15)' }}
+                aria-hidden="true"
+              >
+                "
+              </div>
+
               {/* Stars */}
-              <div className="flex justify-center gap-1 mb-6">
+              <div className="flex justify-center gap-1 mb-5">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                   <StarIcon key={i} className="w-6 h-6 text-yellow-400" />
                 ))}
@@ -112,7 +122,7 @@ const Testimonials = () => {
               <div className="flex items-center justify-center gap-4">
                 <div className={`w-16 h-16 rounded-full ${isDark ? 'bg-[#3B82F6]/20' : 'bg-blue-100'} flex items-center justify-center`}>
                   <span className={`text-xl font-bold ${isDark ? 'text-[#3B82F6]' : 'text-blue-600'}`}>
-                    {testimonials[currentIndex].name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                    {testimonials[currentIndex].name.split(' ').map((n) => n[0]).join('').slice(0, 2)}
                   </span>
                 </div>
                 <div className="text-left">
@@ -137,9 +147,11 @@ const Testimonials = () => {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex 
-                    ? 'bg-[#3B82F6] scale-125' 
-                    : isDark ? 'bg-[#30363D] hover:bg-[#3B82F6]/50' : 'bg-gray-300 hover:bg-[#3B82F6]/50'
+                  index === currentIndex
+                    ? 'bg-[#3B82F6] scale-125'
+                    : isDark
+                    ? 'bg-[#30363D] hover:bg-[#3B82F6]/50'
+                    : 'bg-gray-300 hover:bg-[#3B82F6]/50'
                 }`}
               />
             ))}

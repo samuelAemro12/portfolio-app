@@ -8,12 +8,30 @@ const Hero = () => {
   const { isDark } = useTheme();
 
   return (
-    <section className={`min-h-screen ${isDark ? 'bg-[#0D1117]' : 'bg-white'} flex items-center justify-center px-6 pt-20`}>
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center justify-center min-h-[70vh]">
+    <section className={`relative min-h-screen ${isDark ? 'bg-[#0D1117]' : 'bg-white'} flex items-center justify-center px-6 pt-20 overflow-hidden`}>
+      {/* Subtle dot-grid pattern */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(circle, ${isDark ? 'rgba(59,130,246,0.14)' : 'rgba(59,130,246,0.09)'} 1px, transparent 1px)`,
+          backgroundSize: '32px 32px',
+        }}
+      />
+      {/* Edge-fade overlay so dots vanish toward the borders */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: isDark
+            ? 'radial-gradient(ellipse at center, transparent 35%, #0D1117 78%)'
+            : 'radial-gradient(ellipse at center, transparent 35%, white 78%)',
+        }}
+      />
+
+      <div className="relative max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center justify-center min-h-[70vh]">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
           className="flex flex-col justify-center items-start text-left"
         >
           <motion.h1
@@ -24,7 +42,7 @@ const Hero = () => {
           >
             Selam, I'm <span className="text-[#3B82F6]">Samuel</span>
           </motion.h1>
-          
+
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -33,19 +51,19 @@ const Hero = () => {
           >
             Full Stack Web and Software Builder
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             className={`text-base md:text-lg ${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} mb-4 leading-relaxed`}
           >
-          I design and develop fast, scalable, and user-friendly applications - 
-          blending frontend craftsmanship with backend efficiency. 
-          Driven by modern and legacy technology and a builder’s mindset,
-          I focus on clean code, smooth user experiences, and real-world problem solving.
+            I design and develop fast, scalable, and user-friendly applications —
+            blending frontend craftsmanship with backend efficiency.
+            Driven by modern and legacy technology and a builder's mindset,
+            I focus on clean code, smooth user experiences, and real-world problem solving.
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -61,7 +79,7 @@ const Hero = () => {
               View My Work
               <ChevronDownIcon className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
             </Link>
-            
+
             <a
               href="https://drive.google.com/uc?export=download&id=1ueX9pyAuxNBUYUI9vQHnXY18h-GPDRMZ"
               target="_blank"
@@ -75,7 +93,7 @@ const Hero = () => {
             </a>
           </motion.div>
         </motion.div>
-        
+
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -83,7 +101,19 @@ const Hero = () => {
           className="flex items-center justify-center"
         >
           <div className="relative flex items-center justify-center w-full max-w-[480px] aspect-square mx-auto overflow-visible">
-            {/* Spinning Elements in a Wider Circle Around the Image */}
+            {/* Blue ambient glow behind the image */}
+            <div
+              className="absolute pointer-events-none"
+              style={{
+                width: '65%',
+                height: '65%',
+                borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%)',
+                filter: 'blur(32px)',
+              }}
+            />
+
+            {/* Spinning Elements */}
             <motion.div
               style={{
                 position: 'absolute',
@@ -103,51 +133,32 @@ const Hero = () => {
               transition={{ repeat: Infinity, duration: 12, ease: 'linear' }}
             >
               <motion.div
-                style={{
-                  position: 'absolute',
-                  left: '50%',
-                  top: 0,
-                  translateX: '-50%'
-                }}
+                style={{ position: 'absolute', left: '50%', top: 0, translateX: '-50%' }}
                 className="w-16 h-16 bg-[#3B82F6]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#3B82F6]/30"
               >
                 <span className="text-2xl">💻</span>
               </motion.div>
               <motion.div
-                style={{
-                  position: 'absolute',
-                  right: 0,
-                  top: '50%',
-                  translateY: '-50%'
-                }}
+                style={{ position: 'absolute', right: 0, top: '50%', translateY: '-50%' }}
                 className="w-16 h-16 bg-[#3B82F6]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#3B82F6]/30"
               >
                 <span className="text-2xl">🌐</span>
               </motion.div>
               <motion.div
-                style={{
-                  position: 'absolute',
-                  left: '50%',
-                  bottom: 0,
-                  translateX: '-50%'
-                }}
+                style={{ position: 'absolute', left: '50%', bottom: 0, translateX: '-50%' }}
                 className="w-16 h-16 bg-[#3B82F6]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#3B82F6]/30"
               >
                 <span className="text-2xl">⚡</span>
               </motion.div>
               <motion.div
-                style={{
-                  position: 'absolute',
-                  left: 0,
-                  top: '50%',
-                  translateY: '-50%'
-                }}
+                style={{ position: 'absolute', left: 0, top: '50%', translateY: '-50%' }}
                 className="w-16 h-16 bg-[#3B82F6]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#3B82F6]/30"
               >
                 <span className="text-2xl">🛠️</span>
               </motion.div>
             </motion.div>
-            {/* Profile Image (untouched) */}
+
+            {/* Profile Image */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
@@ -156,10 +167,10 @@ const Hero = () => {
               <img
                 src={profileImage}
                 alt="Samuel Aemro"
-                className="w-full h-full object-cover rotate-0"
+                className="w-full h-full object-cover"
               />
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#3B82F6]/20 to-transparent"></div>
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3B82F6]/20 to-transparent" />
             </motion.div>
           </div>
         </motion.div>
@@ -169,4 +180,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

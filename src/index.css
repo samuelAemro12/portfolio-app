@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -44,4 +45,21 @@ body:not(.dark) {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #2563EB;
+}
+
+/* Active nav link — applied by react-scroll spy */
+.active-nav-link {
+  color: #3B82F6 !important;
+  font-weight: 600;
+}
+
+.active-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #3B82F6;
+  border-radius: 1px;
 }

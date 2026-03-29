@@ -1,65 +1,54 @@
 import { motion } from 'framer-motion';
 import { AcademicCapIcon, TrophyIcon } from '@heroicons/react/24/outline';
 import { useTheme } from '../contexts/ThemeContext';
+import SectionBadge from './SectionBadge';
 
 const Certifications = () => {
   const { isDark } = useTheme();
 
   const certifications = [
     {
-      title: "Data Analysis Fundamentals",
-      provider: "Udacity",
-      year: "2025",
-      highlight: "Industry-Recognized Certification",
-      certificateLink: "https://drive.google.com/file/d/1a5oe1Ugt2WxfN8arXT_bJVfrMqjh8nx6/view?usp=sharing"
+      title: 'Data Analysis Fundamentals',
+      provider: 'Udacity',
+      year: '2025',
+      highlight: 'Industry-Recognized Certification',
+      certificateLink: 'https://drive.google.com/file/d/1a5oe1Ugt2WxfN8arXT_bJVfrMqjh8nx6/view?usp=sharing',
     },
     {
-      title: "ML & Employability Training",
-      provider: "University of Gondar & Norad",
-      year: "2025",
-      highlight: "Joint International Program",
-      certificateLink: "https://drive.google.com/file/d/1VLyrcztG-w6DjJMLMr8lZNaIEPXEsKwV/view?usp=sharing"
+      title: 'ML & Employability Training',
+      provider: 'University of Gondar & Norad',
+      year: '2025',
+      highlight: 'Joint International Program',
+      certificateLink: 'https://drive.google.com/file/d/1VLyrcztG-w6DjJMLMr8lZNaIEPXEsKwV/view?usp=sharing',
     },
     {
-      title: "AdeyBloom: Final Year Project",
-      provider: "University of Gondar",
-      year: "2025",
-      highlight: "Ranked 5th University-wide",
-      certificateLink: "https://drive.google.com/file/d/1sMT6DbxBQtnlpufBt4ly5FmlKWC-oSju/view?usp=sharing"
-    }
+      title: 'AdeyBloom: Final Year Project',
+      provider: 'University of Gondar',
+      year: '2025',
+      highlight: 'Ranked 5th University-wide',
+      certificateLink: 'https://drive.google.com/file/d/1sMT6DbxBQtnlpufBt4ly5FmlKWC-oSju/view?usp=sharing',
+    },
   ];
 
   const education = [
     {
-      degree: "BSc in Information Systems",
-      institution: "University of Gondar",
-      year: "2021 – 2025",
-      honor: "Graduated with Great Distinction (Top 2 in Department)",
-      degreeLink: "https://drive.google.com/file/d/1I4sqTQwlsg6dcImbnjiWO8OEgeZPEhcV/view?usp=sharing",
-      certificateLink: "https://drive.google.com/file/d/1YFj_7Gi2qaY9K4FllIxkrDvjimYSzJcG/view?usp=sharing"
-    }
+      degree: 'BSc in Information Systems',
+      institution: 'University of Gondar',
+      year: '2021 – 2025',
+      honor: 'Graduated with Great Distinction (Top 2 in Department)',
+      degreeLink: 'https://drive.google.com/file/d/1I4sqTQwlsg6dcImbnjiWO8OEgeZPEhcV/view?usp=sharing',
+      certificateLink: 'https://drive.google.com/file/d/1YFj_7Gi2qaY9K4FllIxkrDvjimYSzJcG/view?usp=sharing',
+    },
   ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   };
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
   };
 
   return (
@@ -72,6 +61,7 @@ const Certifications = () => {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
+          <SectionBadge label="Education" />
           <h2 className={`text-4xl md:text-5xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>
             Education & <span className="text-[#3B82F6]">Certifications</span>
           </h2>
@@ -91,7 +81,7 @@ const Certifications = () => {
               <AcademicCapIcon className="w-8 h-8 text-[#3B82F6]" />
               <h3 className={`text-2xl font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'}`}>Education</h3>
             </div>
-            
+
             <div className="space-y-6">
               {education.map((edu, index) => (
                 <motion.div
@@ -143,7 +133,7 @@ const Certifications = () => {
                 </motion.div>
               ))}
             </div>
-            
+
             <a
               href="https://drive.google.com/drive/folders/169BD0ekBB3WTfQW-hRBdJhNdHhfqVSu2?usp=drive_link"
               target="_blank"
@@ -198,11 +188,9 @@ const Certifications = () => {
                     <h4 className={`text-lg font-semibold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-3 group-hover:text-[#3B82F6] transition-colors line-clamp-2`}>
                       {cert.title}
                     </h4>
-                    
                     <p className={`${isDark ? 'text-[#E6EDF3]/70' : 'text-gray-600'} text-sm mb-4 flex-1`}>
                       {cert.provider}
                     </p>
-
                     {cert.highlight && (
                       <div className={`${isDark ? 'bg-[#3B82F6]/10 border-[#3B82F6]/20' : 'bg-blue-50 border-blue-200'} p-3 rounded-lg border mt-auto mb-4`}>
                         <p className={`text-sm ${isDark ? 'text-[#3B82F6]' : 'text-blue-700'} font-medium`}>
@@ -210,7 +198,6 @@ const Certifications = () => {
                         </p>
                       </div>
                     )}
-
                     <a
                       href={cert.certificateLink}
                       target="_blank"

@@ -1,75 +1,74 @@
 import { motion } from 'framer-motion';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { useTheme } from '../contexts/ThemeContext';
+import SectionBadge from './SectionBadge';
 
 const Projects = () => {
   const { isDark } = useTheme();
 
-  // Remove all useState and useEffect for theme
-
   const projects = [
     {
-      title: "AdeyBloom E-commerce Platform",
-      description: "Multilingual full-stack e-commerce platform with Stripe/Chapa payments, real-time inventory, FastAPI microservices, and Telegram bot integration for customer engagement.",
-      technologies: ["React", "Node.js", "MongoDB", "Express.js", "FastAPI", "Tailwind CSS", "Chapa API", "JWT", "Cloudinary", "Bcrypt", "Telegram"],
-      liveDemo: "https://adeybloom-ecommerce-client.netlify.app/",
-      github: "https://github.com/samuelAemro12/AdeyBloom-ecommerce-clientSide"
+      title: 'AdeyBloom E-commerce Platform',
+      description:
+        'Multilingual full-stack e-commerce platform with Stripe/Chapa payments, real-time inventory, FastAPI microservices, and Telegram bot integration for customer engagement.',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Express.js', 'FastAPI', 'Tailwind CSS', 'Chapa API', 'JWT', 'Cloudinary', 'Bcrypt', 'Telegram'],
+      liveDemo: 'https://adeybloom-ecommerce-client.netlify.app/',
+      github: 'https://github.com/samuelAemro12/AdeyBloom-ecommerce-clientSide',
+      featured: true,
     },
     {
-      title: "Amazon Clone",
-      description: "Fully functional Amazon clone with user authentication, shopping cart, payment processing via Stripe, and Firebase integration. Features complete e-commerce functionality with modern React architecture.",
-      technologies: ["React", "Firebase", "Stripe API", "Express.js", "Node.js", "User Authentication", "FakeStore API"],
-      liveDemo: "https://samuel-amazon-clone-deploy.netlify.app/",
-      github: "https://github.com/samuelAemro12/amazon-clone"
+      title: 'Amazon Clone',
+      description:
+        'Fully functional Amazon clone with user authentication, shopping cart, payment processing via Stripe, and Firebase integration. Features complete e-commerce functionality with modern React architecture.',
+      technologies: ['React', 'Firebase', 'Stripe API', 'Express.js', 'Node.js', 'User Authentication', 'FakeStore API'],
+      liveDemo: 'https://samuel-amazon-clone-deploy.netlify.app/',
+      github: 'https://github.com/samuelAemro12/amazon-clone',
+      featured: false,
     },
     {
-      title: "Netflix Clone",
-      description: "Netflix-inspired streaming platform clone with Firebase authentication, movie trailers integration, and responsive design. Showcases advanced frontend development skills with API integration.",
-      technologies: ["React", "Firebase Auth", "YouTube trailer Integration", "TMDB API", "CSS3", "User Authentication"],
-      liveDemo: "https://samuelaemro-netflx-clone.netlify.app/",
-      github: "https://github.com/samuelAemro12/netflix-clone"
+      title: 'Netflix Clone',
+      description:
+        'Netflix-inspired streaming platform clone with Firebase authentication, movie trailers integration, and responsive design. Showcases advanced frontend development skills with API integration.',
+      technologies: ['React', 'Firebase Auth', 'YouTube trailer Integration', 'TMDB API', 'CSS3', 'User Authentication'],
+      liveDemo: 'https://samuelaemro-netflx-clone.netlify.app/',
+      github: 'https://github.com/samuelAemro12/netflix-clone',
+      featured: false,
     },
     {
-      title: "Breast Cancer Prediction System",
-      description: "Machine learning project for breast cancer recurrence prediction using Naive Bayes and SVM classifiers. Developed on Google Colab with comprehensive data analysis and model evaluation.",
-      technologies: ["Python", "Jupyter Notebook", "Scikit-learn", "Naive Bayes", "SVM", "Healthcare ML"],
-      github: "https://github.com/samuelAemro12/MachineLeraning_SchoolProject-"
+      title: 'Breast Cancer Prediction System',
+      description:
+        'Machine learning project for breast cancer recurrence prediction using Naive Bayes and SVM classifiers. Developed on Google Colab with comprehensive data analysis and model evaluation.',
+      technologies: ['Python', 'Jupyter Notebook', 'Scikit-learn', 'Naive Bayes', 'SVM', 'Healthcare ML'],
+      github: 'https://github.com/samuelAemro12/MachineLeraning_SchoolProject-',
+      featured: false,
     },
     {
-      title: "CinemaStash API",
-      description: "Secure and scalable backend API for movie management with TMDB integration, user authentication, reviews, wishlists, and personalized recommendations. Built with modern REST principles.",
-      technologies: ["Node.js", "Express.js", "MongoDB", "TMDB API", "JWT", "RESTful API"],
-      liveDemo: "https://cinemastash.onrender.com/",
-      github: "https://github.com/samuelAemro12/CinemaStash"
+      title: 'CinemaStash API',
+      description:
+        'Secure and scalable backend API for movie management with TMDB integration, user authentication, reviews, wishlists, and personalized recommendations. Built with modern REST principles.',
+      technologies: ['Node.js', 'Express.js', 'MongoDB', 'TMDB API', 'JWT', 'RESTful API'],
+      liveDemo: 'https://cinemastash.onrender.com/',
+      github: 'https://github.com/samuelAemro12/CinemaStash',
+      featured: false,
     },
     {
-      title: "BloodLink Platform",
-      description: "Collaborative blood donation platform connecting donors with recipients. Features real-time matching, user profiles, and emergency request system to save lives through technology.",
-      technologies: ["Next.js", "Prisma", "SQLite", "Real-time Updates", "Healthcare Tech"],
-      github: "https://github.com/samuelAemro12/bloodlink"
-    }
+      title: 'BloodLink Platform',
+      description:
+        'Collaborative blood donation platform connecting donors with recipients. Features real-time matching, user profiles, and emergency request system to save lives through technology.',
+      technologies: ['Next.js', 'Prisma', 'SQLite', 'Real-time Updates', 'Healthcare Tech'],
+      github: 'https://github.com/samuelAemro12/bloodlink',
+      featured: false,
+    },
   ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   };
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
   };
 
   return (
@@ -82,6 +81,7 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
+          <SectionBadge label="Work" />
           <h2 className={`text-4xl md:text-5xl font-bold ${isDark ? 'text-[#E6EDF3]' : 'text-gray-900'} mb-4`}>
             Featured <span className="text-[#3B82F6]">Projects</span>
           </h2>
@@ -101,16 +101,23 @@ const Projects = () => {
             <motion.div
               key={index}
               variants={cardVariants}
-              className={`${isDark ? 'bg-[#161B22] border-[#30363D] hover:border-[#3B82F6]/50 hover:shadow-[#3B82F6]/10' : 'bg-white border-gray-200 hover:border-[#3B82F6]/50 hover:shadow-blue-100'} rounded-xl p-6 border transition-all duration-300 group hover:shadow-xl`}
+              className={`relative ${isDark ? 'bg-[#161B22] border-[#30363D] hover:border-[#3B82F6]/50 hover:shadow-[#3B82F6]/10' : 'bg-white border-gray-200 hover:border-[#3B82F6]/50 hover:shadow-blue-100'} rounded-xl p-6 border transition-all duration-300 group hover:shadow-xl`}
             >
-              <h3 className={`text-xl font-semibold ${isDark ? 'text-[#E6EDF3] group-hover:text-[#3B82F6]' : 'text-gray-900 group-hover:text-[#3B82F6]'} mb-3 transition-colors`}>
+              {/* Featured badge */}
+              {project.featured && (
+                <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold text-amber-400 bg-amber-400/10 border border-amber-400/20 rounded-full">
+                  ⭐ Featured
+                </span>
+              )}
+
+              <h3 className={`text-xl font-semibold ${isDark ? 'text-[#E6EDF3] group-hover:text-[#3B82F6]' : 'text-gray-900 group-hover:text-[#3B82F6]'} mb-3 transition-colors ${project.featured ? 'pr-24' : ''}`}>
                 {project.title}
               </h3>
-              
+
               <p className={`${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} mb-4 leading-relaxed`}>
                 {project.description}
               </p>
-              
+
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.technologies.map((tech, techIndex) => (
                   <span
@@ -121,7 +128,7 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-              
+
               <div className="flex gap-4">
                 {project.liveDemo && (
                   <a
@@ -134,7 +141,7 @@ const Projects = () => {
                     Live Demo
                   </a>
                 )}
-                
+
                 <a
                   href={project.github}
                   target="_blank"

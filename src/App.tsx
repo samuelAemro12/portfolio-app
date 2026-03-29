@@ -10,39 +10,39 @@ import Certifications from './components/Certifications';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <div className="min-h-screen transition-colors duration-300">
       <Navbar />
-      <main className="">
+      <main>
         <section id="hero">
           <Hero />
         </section>
         <section id="whatIDo">
           <WhatIDo />
-        </section> 
+        </section>
         <section id="projects">
           <Projects />
         </section>
         <section id="skills">
           <TechnicalSkills />
         </section>
-
         <OpenSource />
         <Certifications />
         <Testimonials />
         <section id="about">
-        <About />
+          <About />
         </section>
         <section id="contact">
           <Contact />
         </section>
         <Footer />
       </main>
+      <ScrollToTop />
     </div>
   );
 }
 
 export default App;
-

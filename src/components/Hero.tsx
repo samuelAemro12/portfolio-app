@@ -58,7 +58,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className={`text-base md:text-lg ${isDark ? 'text-[#E6EDF3]/80' : 'text-gray-700'} mb-4 leading-relaxed`}
           >
-            I design and develop fast, scalable, and user-friendly applications —
+            I design and develop fast, scalable, and user-friendly applications,
             blending frontend craftsmanship with backend efficiency.
             Driven by modern and legacy technology and a builder's mindset,
             I focus on clean code, smooth user experiences, and real-world problem solving.
